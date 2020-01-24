@@ -24,10 +24,8 @@ class HomeComponent extends React.Component {
   }
 
   rollSlider(e) {
-    console.log(e.target.getAttribute('datakey'));
     this.setState({widths: this.state.widths.map((val,ind) => (ind === parseInt(e.target.getAttribute('datakey'))) ? 278 : 150)});
     var hgts=this.state.heights;
-    console.log("Before:" + JSON.stringify(hgts) +" ||| " + JSON.stringify(this.state.widths));
     var tops=this.state.tops;
     var opacities=this.state.opacity;
     opacities = opacities.map(x=> {return 0.5});
@@ -47,7 +45,6 @@ class HomeComponent extends React.Component {
     this.setState({heights: hgts});    
     this.setState({tops: tops});
     this.setState({opacity: opacities});
-    console.log("After:" +JSON.stringify(hgts) + " ||| " + JSON.stringify(this.state.widths));
   }
 
   render() {
@@ -120,7 +117,6 @@ class HomeComponent extends React.Component {
           <a class="prev">&#10094;</a>
           <div className="mySlides1">
             {this.state.images.map((item, index) => {
-              {{/*return <img src={item} key={index} dataKey={index} style={{ opacity: this.state.opacity[index], top: this.state.tops[index], width: this.state.widths[index], height: this.state.heights[index]}} onMouseOver={this.rollSlider} />*/}}              
               {{return <div key={index} style={{ overflow:"hidden", opacity: this.state.opacity[index], background: "#fff", top: this.state.tops[index], width: this.state.widths[index], height: this.state.heights[index]}} ><img src={item} datakey={index} style={{opacity: this.state.opacity[index], height:"100%"}} onMouseOver={this.rollSlider}/></div>}}
             })}
           </div>
