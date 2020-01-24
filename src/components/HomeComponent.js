@@ -8,6 +8,7 @@ import slider5 from '../assets/images/5.svg';
 import slider6 from '../assets/images/6.svg';
 import slider7 from '../assets/images/7.svg';
 import iaclogo from '../assets/images/iaclogo.svg';
+import 'font-awesome/css/font-awesome.min.css';
 
 class HomeComponent extends React.Component {
   constructor(props) {
@@ -92,7 +93,9 @@ class HomeComponent extends React.Component {
           <ul><li>brertert</li><li>tsdfsdf</li><li>hjhkjhk</li></ul>
           </div>  
           </li>
-          <li><a href="products">Quick Links</a></li>
+          <li><i class="fa fa-search" aria-hidden="true"></i></li>
+          <li><i class="fa fa-user" aria-hidden="true"></i></li>
+          <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
         </ul>
         <img src={logo} className="App-logo" alt="logo" />    
       </header>
@@ -104,8 +107,9 @@ class HomeComponent extends React.Component {
             <a href="more" class="btn primary">Know More</a>
             <a href="watchVideoBtn" class="btn activeBtn">Watch Video..</a>
           </div>
-          <div class="chatBtn">
-            Chat With Us
+          <div class="chatBtn">          
+            <i className='fa fa-comments' style={{"fontSize":"48px"}}></i>
+            <p>Chat With Us</p>
           </div>
         </div>                
         <div className="slideshow-container">
