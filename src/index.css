@@ -3,6 +3,7 @@ body {
   font-family: 'Roboto', 'Roboto-Condensed', 'sans-serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: calc(10px + 1.2vmin);
 }
 
 @font-face {
