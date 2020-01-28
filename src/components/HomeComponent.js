@@ -107,8 +107,8 @@ class HomeComponent extends React.Component {
           infiniteScroll
           media={{
             '@media (max-width: 600px)': {
-              width: '500px',
-              height: '300px'
+              width: '100%',
+              height: '400px'
             },
             '@media (min-width: 768px)': {
               width: '700px',

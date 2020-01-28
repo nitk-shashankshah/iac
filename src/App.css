@@ -131,7 +131,7 @@ ul.menu > li:last-child{
 }
 
 ul.menu li {
-  padding-right:calc(20px + 3vmin);
+  padding-right:calc(2.5vmin);
 }
 ul.menu li.actionIcon {
   padding-right:calc(10px + 1.5vmin);
@@ -291,7 +291,7 @@ div.icon a{
   color:#fff;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   ul.menu{
     clear: both;
     display: block;    
