@@ -294,13 +294,19 @@ div.icon a{
 @media screen and (max-width: 900px) {
   ul.menu{
     clear: both;
-    display: block;    
+    display: none;    
+  }
+  .responsive{
+    display:block!important;
   }
   ul.actionIcons {
     width:250px;
   }
   div.icon {
     display: block;
+  }
+  div.icon .fa{
+    cursor: pointer;
   }
   ul.menu li a:hover {
     color:#f0ab00;

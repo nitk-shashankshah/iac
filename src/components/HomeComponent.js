@@ -34,9 +34,10 @@ class HomeComponent extends React.Component {
   render() {
   return (
     <div>
+      {this.state.isResponsive}
       <header className="header">
         <img src={iaclogo} className="App-logo" alt="logo" />
-        <ul className="menu">
+        <ul className={this.state.isResponsive ? "responsive menu" : "menu"}>
           <li><a href="home">About Us</a>
           <div className="submenu homeMenu">
           <ul><li><b>IAC Overview</b></li><li>History</li><li>Global Capability Center</li><li>Leadership</li><li>Mission & Vision</li><li>Diversity & Inclusion</li><li>CSR</li><li>Innovation</li><li>Success Stories</li><li>FAQs</li></ul>
@@ -82,7 +83,7 @@ class HomeComponent extends React.Component {
           <li className="actionIcon"><a href="search"><i className="fa fa-map-marker" aria-hidden="true"></i></a></li>
           <li><img src={logo} className="extra-logo" alt="logo" /></li>
         </ul>
-        <div className="icon"><a href="test" onClick={this.rollMenu}><i className="fa fa-bars"></i></a></div>
+        <div className="icon"><i className="fa fa-bars" onClick={this.rollMenu}></i></div>
         <div style={{"clear":"both"}}/>     
       </header>
       <main>
