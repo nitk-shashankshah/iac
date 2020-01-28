@@ -100,12 +100,13 @@ class HomeComponent extends React.Component {
         </div>                        
         <h2>Our Capabilities</h2>
         <Coverflow
+          width={500}
+          height={120}
           displayQuantityOfSide={2}
           navigation={false}
           enableHeading={false}
           clickable
           infiniteScroll
-          currentFigureScale={1}
           media={{
             '@media (max-width: 600px)': {
               width: '500px',
