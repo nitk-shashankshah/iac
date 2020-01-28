@@ -108,31 +108,23 @@ class HomeComponent extends React.Component {
           media={{
             '@media (max-width: 600px)': {
               width: '500px',
-              height: '120px'
+              height: '250px'
             },
             '@media (min-width: 768px)': {
               width: '700px',
-              height: '250px'
+              height: '360px'
             },
             '@media (min-width: 992px)': {
               width: '900px',
-              height: '350px'
+              height: '420px'
             },
             '@media (min-width: 1200px)': {
               width: '1200px',
-              height: '500px'
+              height: '550px'
             }
           }} 
         >
-          <div
-            onClick={this.fn}
-            onKeyDown={this.fn}
-            role="menuitem"
-            tabIndex="0"
-          >
-            <img src={slider1} alt='Album one'
-            />
-          </div>
+          <img src={slider1} alt='Album one' data-action="http://passer.cc"/>
           <img src={slider2} alt='Album two' data-action="http://passer.cc"/>
           <img src={slider3} alt='Album three' data-action="https://doce.cc/"/>
           <img src={slider4} alt='Album four' data-action="http://tw.yahoo.com"/>
