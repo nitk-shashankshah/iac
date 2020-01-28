@@ -88,11 +88,13 @@ class HomeComponent extends React.Component {
       </header>
       <main>
         <div className="banner">
-          <div className="detailSection">
+          <div class="detailSection">
+            <div className="details">
             <h3 className="pageHeading">Leading Through Innovation</h3>
             <p>IAC is Elanco's Global Capability Center (GCC), established in India, and is a key pillar in driving Elanco's IPP strategy. GCC or Global Capability Center is an offshore, owned, integrated strategic platform for leveraging global talent.</p>
             <a href="more" className="btn primary">Know More</a>
             <a href="watchVideoBtn" className="btn activeBtn">Watch Video..</a>
+            </div>
           </div>
           <div class="chatBtn">          
             <i className="fa fa-comments"></i>
@@ -121,7 +123,11 @@ class HomeComponent extends React.Component {
             },
             '@media (min-width: 1200px)': {
               width: '1200px',
-              height: '550px'
+              height: 'calc(80vmin)'
+            },
+            '@media (min-width: 1400px)': {
+              width: '90%',
+              height: 'calc(90vmin)'
             }
           }} 
         >

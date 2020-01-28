@@ -20,7 +20,7 @@
   background-color: #282c34;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 0px 0px;
   color: white;
   min-height:72px;
 }
@@ -28,26 +28,31 @@
 h3.pageHeading {
   margin:0px;
   letter-spacing: 2px;
-  font-size:42px;
+  font-size:2em;
   color:#f0ab00;
 }
 
+.details {
+  float:left;
+  width: 60%;
+}
 .chatBtn{
   right:0px;
   background:#007fbd;
   color:#fff;
-  position: absolute;
   padding:10px;
-  top: 50%;
   cursor: pointer;
   height: 100px;
   box-sizing: border-box;
   text-align: center;
-  z-index:10;
+  position:absolute;
+  top:372px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .chatBtn .fa-comments{
-  font-size:36px;
+  font-size:2em;
 }
 
 .chatBtn p{
@@ -56,35 +61,19 @@ h3.pageHeading {
 }
 
 .detailSection {
-  margin-left:10%;
-  position: relative; 
-  top: 30%;
+  width:100%;
+  position: absolute;
+  top: 372px;
+  padding-left:5%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   font-family: 'Roboto-Condensed';
-  /*-ms-transform: translateY(-50%);
-  transform: translateY(-50%);*/
-}
-
-@media screen and (max-width:800px) {
-  .detailSection {
-    width: 90%;
-  }  
-}
-
-@media screen and (min-width:768px) and (max-width:1024px) {
-  .detailSection {
-    width: 60%;
-  }  
-}
-
-@media screen and (min-width:1025px) {
-  .detailSection {
-    width: 50%;
-  }  
 }
 
 .detailSection p {
   color:#fff;
-  font-size:24px;
+  font-size:1em;
+  line-height: 1.8em;
 }
 
 ul.actionIcons{
@@ -101,7 +90,7 @@ ul.actionIcons li a {
   color:#fff;
 }
 ul.actionIcons li .fa{
-  font-size: 32px;
+  /*font-size: 32px;*/
   margin:-1vw 0;
 }
 .fa-search {
@@ -117,7 +106,7 @@ ul.menu{
 }
 
 ul.menu .fa{
-  font-size: 24px;
+  font-size: 1.2em;
 }
 
 ul.menu li:not(:last-child){
@@ -131,7 +120,7 @@ ul.menu > li:last-child{
 }
 
 ul.menu li {
-  padding-right:calc(2.5vmin);
+  padding-right:calc(2.2vmin);
 }
 ul.menu li.actionIcon {
   padding-right:calc(10px + 1.5vmin);
@@ -215,9 +204,9 @@ ul.menu li a:hover ~ .submenu{
 }
 
 .banner{
- background: url(assets/images/backgroundpicture.svg);
+ background: url(assets/images/backgroundpicture.svg) no-repeat left top;
  width:100%;
- background-size: 100%;
+ background-size: cover;
  height:600px;
  display: flex;
  vertical-align: middle;
@@ -241,39 +230,6 @@ ul.menu li a:hover ~ .submenu{
   opacity:0.5;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -60px;
-  color: #fff;
-  font-weight: normal;
-  font-size: 65px;
-  transition: 0.6s ease;
-  border-radius: 3px;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 10px;
-  border-radius: 3px 0 0 3px;
-}
-.prev {
-  left: 10px;
-}
-
-/* On hover, add a grey background color */
-.prev:hover, .next:hover {
-  background-color: #333;
-  color: #fff;
-}
-.coverflow__stage__14oqC {
-  margin: 0px -85px;
-}
 h2{
   color:rgb(153, 153, 153);;
   text-align: center;
@@ -284,17 +240,26 @@ div.icon {
   position: absolute;
   top:10px;
   right:10px;
-  font-size:36px;
+  /*font-size:36px;*/
 }
 
 div.icon a{
   color:#fff;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   ul.menu{
     clear: both;
     display: none;    
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    background: #282c34;
+    z-index: 1000;
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    top:72px;
   }
   .responsive{
     display:block!important;
@@ -307,6 +272,7 @@ div.icon a{
   }
   div.icon .fa{
     cursor: pointer;
+    font-size: 2em;
   }
   ul.menu li a:hover {
     color:#f0ab00;
