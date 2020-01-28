@@ -116,8 +116,8 @@ ul.menu li:not(:last-child){
 
 ul.menu > li:last-child{
   padding-top:5px;
-  padding-left:calc(20px + 3vmin);
-  padding-right:0px;
+  padding-left: calc(15px + 1.5vmin);
+  padding-right: 10px;
 }
 
 ul.menu li {
@@ -253,7 +253,7 @@ div.icon a{
     display: none;    
     float: left;
     margin: 0px;
-    padding: 0px;
+    padding: 0px 20px;
     background: #282c34;
     z-index: 1000;
     width: 100%;
@@ -274,14 +274,15 @@ div.icon a{
     cursor: pointer;
     font-size: 2em;
   }
+  ul.menu li a {
+    padding-left:20px;
+  }
   ul.menu li a:hover {
     color:#f0ab00;
     border-bottom: none;
   }
   ul.menu > li:last-child{
-    padding-top:5px;
-    padding-left:0px;
-    padding-right:0px;
+    padding:20px;
   }
   ul.menu li a:hover ~ .submenu{
     display: none;
