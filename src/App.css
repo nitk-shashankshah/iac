@@ -45,14 +45,21 @@ h3.pageHeading {
   text-align: center;
   z-index:10;
 }
+
+.chatBtn .fa-comments{
+  font-size:36px;
+}
+
 .chatBtn p{
   padding:0px;
   margin:8px 0px;
 }
+
 .detailSection {
   margin-left:10%;
   position: relative; 
   top: 30%;
+  font-family: 'Roboto-Condensed';
   /*-ms-transform: translateY(-50%);
   transform: translateY(-50%);*/
 }
@@ -104,11 +111,9 @@ ul.actionIcons li .fa{
 ul.menu{
   list-style-type: none;
   display: flex;
-  width: 80%;
   float: right;
   margin:0px;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 ul.menu .fa{
@@ -119,12 +124,29 @@ ul.menu li:not(:last-child){
   padding-top:20px;
 }
 
+ul.menu > li:last-child{
+  padding-top:5px;
+  padding-left:calc(20px + 3vmin);
+  padding-right:0px;
+}
+
+ul.menu li {
+  padding-right:calc(20px + 3vmin);
+}
+ul.menu li.actionIcon {
+  padding-right:calc(10px + 1.5vmin);
+}
 
 ul.menu li a{
   color:#fff;
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: bottom;
+}
+ul.menu li a:hover {
+  color:#f0ab00;
+  padding-bottom: 28px;
+  border-bottom: 3px solid #f0ab00;
 }
 ul.menu li a:hover ~ .submenu{
   display: flex;
@@ -156,14 +178,17 @@ ul.menu li a:hover ~ .submenu{
   justify-content: space-between;
   position: absolute;
   z-index:5;
-  top:100px;
+  top:72px;
   display:none;
 }
+
 .slideshow{
   clear:both;
 }
 .homeMenu{
-  left:150px;
+  transform: translateX(-25%);
+  width:920px;
+  overflow:hidden;
 }
 
 .aboutMenu{
@@ -246,19 +271,12 @@ ul.menu li a:hover ~ .submenu{
   background-color: #333;
   color: #fff;
 }
-
-.slideshow-container {
-  width: 100%;
-  background:#222;
-  position: relative;
-  margin: auto;
-  padding: 10px 10px;
-  box-sizing: border-box;
-  text-align: center;
+.coverflow__stage__14oqC {
+  margin: 0px -85px;
 }
-
-.slideshow-container h2{
-  color: #999;
+h2{
+  color:rgb(153, 153, 153);;
+  text-align: center;
 }
 
 div.icon {
@@ -273,10 +291,6 @@ div.icon a{
   color:#fff;
 }
 
-.responsive {
-  display:block;
-}
-
 @media screen and (max-width: 600px) {
   ul.menu{
     clear: both;
@@ -285,11 +299,25 @@ div.icon a{
   ul.actionIcons {
     width:250px;
   }
-  .responsive {
-    display:none!important;
-  }
   div.icon {
     display: block;
+  }
+  ul.menu li a:hover {
+    color:#f0ab00;
+    border-bottom: none;
+  }
+  ul.menu > li:last-child{
+    padding-top:5px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+  ul.menu li a:hover ~ .submenu{
+    display: none;
+  }
+  ul.menu{
+    float: left;
+    padding:0px;
+    margin:0px;
   }
 }
 /*
