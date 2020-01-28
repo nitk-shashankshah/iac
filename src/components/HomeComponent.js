@@ -108,7 +108,7 @@ class HomeComponent extends React.Component {
           media={{
             '@media (max-width: 600px)': {
               width: '500px',
-              height: '250px'
+              height: '300px'
             },
             '@media (min-width: 768px)': {
               width: '700px',
