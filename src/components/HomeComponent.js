@@ -100,8 +100,6 @@ class HomeComponent extends React.Component {
         </div>                        
         <h2>Our Capabilities</h2>
         <Coverflow
-          width={500}
-          height={120}
           displayQuantityOfSide={2}
           navigation={false}
           enableHeading={false}
@@ -112,9 +110,17 @@ class HomeComponent extends React.Component {
               width: '500px',
               height: '120px'
             },
-            '@media (min-width: 900px)': {
+            '@media (min-width: 768px)': {
+              width: '700px',
+              height: '250px'
+            },
+            '@media (min-width: 992px)': {
+              width: '900px',
+              height: '350px'
+            },
+            '@media (min-width: 1200px)': {
               width: '1200px',
-              height: '340px'
+              height: '500px'
             }
           }} 
         >
