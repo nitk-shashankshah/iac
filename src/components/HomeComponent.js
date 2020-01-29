@@ -34,7 +34,6 @@ class HomeComponent extends React.Component {
   render() {
   return (
     <div>
-      {this.state.isResponsive}
       <header className="header">
         <img src={iaclogo} className="App-logo" alt="logo" />
         <ul className={this.state.isResponsive ? "responsive menu" : "menu"}>
@@ -100,10 +99,11 @@ class HomeComponent extends React.Component {
             <i className="fa fa-comments"></i>
             <p>Chat With Us</p>
           </div>
-        </div>                        
+        </div>                  
+        <div class="sliderSection">     
         <h2>Our Capabilities</h2>
         <Coverflow
-          displayQuantityOfSide={2}
+          displayQuantityOfSide={3}
           navigation={false}
           enableHeading={false}
           clickable
@@ -127,7 +127,7 @@ class HomeComponent extends React.Component {
             },
             '@media (min-width: 1400px)': {
               width: '90%',
-              height: 'calc(90vmin)'
+              height: 'calc(60vmin)'
             }
           }} 
         >
@@ -139,9 +139,9 @@ class HomeComponent extends React.Component {
           <img src={slider6} alt='Album seven' data-action="http://www.google.com"/>
           <img src={slider7} alt='Album one' data-action="https://facebook.github.io/react/"/>
         </Coverflow>
-
-      </main>
-    </div>
+        </div>
+        </main>
+        </div>
   );
   }
 }
