@@ -17,16 +17,29 @@ class HomeComponent extends React.Component {
     super(props);
     this.state = { 
       images: [slider1, slider2, slider3, slider4, slider5,slider6, slider7],
-      isResponsive: false
+      isResponsive: false,
+      openMenu: 0
     };
     this.rollMenu = this.rollMenu.bind(this);
-    this.fn = this.fn.bind(this);
+    this.menuMouseOver = this.menuMouseOver.bind(this);
+    this.subMenuMouseOut = this.subMenuMouseOut.bind(this);    
+    this.menuMouseOut = this.menuMouseOut.bind(this);
+    alert(this.state.openMenu);
   }
 
-  fn() {
-    /* do you want */  
+  menuMouseOut() {
+
   }
   
+  menuMouseOver(x) {
+    this.setState({openMenu: x});
+  }
+  subMenuMouseOver(c) {
+    this.setState({openMenu: c});
+  }
+  subMenuMouseOut() {
+    this.setState({openMenu: 0});
+  }
   rollMenu() {
     this.setState({isResponsive: !this.state.isResponsive});
   }
@@ -37,44 +50,44 @@ class HomeComponent extends React.Component {
       <header className="header">
         <img src={iaclogo} className="App-logo" alt="logo" />
         <ul className={this.state.isResponsive ? "responsive menu" : "menu"}>
-          <li><a href="home">About Us</a>
-          <div className="submenu homeMenu">
-          <ul><li><b>IAC Overview</b></li><li>History</li><li>Global Capability Center</li><li>Leadership</li><li>Mission & Vision</li><li>Diversity & Inclusion</li><li>CSR</li><li>Innovation</li><li>Success Stories</li><li>FAQs</li></ul>
-          <ul><li><b>News Articles</b></li><li>Top Stories</li><li>Newsletters</li><li>eMagaines</li></ul>
-          <ul><li><b>Events</b></li><li>GDOP</li><li>Town Hall</li><li>Leadership visits</li></ul>
-          <ul><li><b>Engagements</b></li><li>Employee Resource Groups</li><li>Testimonials</li><li>Business Integration</li></ul>
+          <li><a href="home" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(1)}>About Us</a>
+          <div className={this.state.openMenu == 1 ? "submenu homeMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(1)} onMouseOut={this.subMenuMouseOut}>
+          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
+          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
+          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
+          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>  
           </li>
           <li><a href="about">Capabilities</a>
-          <div className="submenu capabilityMenu">
-          <ul><li><b>IAC Overview</b></li><li>History</li><li>Global Capability Center</li><li>Leadership</li><li>Mission & Vision</li><li>Diversity & Inclusion</li><li>CSR</li><li>Innovation</li><li>Success Stories</li><li>FAQs</li></ul>
-          <ul><li><b>News Articles</b></li><li>Top Stories</li><li>Newsletters</li><li>eMagaines</li></ul>
-          <ul><li><b>Events</b></li><li>GDOP</li><li>Town Hall</li><li>Leadership visits</li></ul>
-          <ul><li><b>Engagements</b></li><li>Employee Resource Groups</li><li>Testimonials</li><li>Business Integration</li></ul>
+          <div className="submenu capabilityMenu" onMouseOut={this.subMenuMouseOut}>
+          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
+          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
+          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
+          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>    
           </li>
           <li><a href="governance">Governance</a>
-          <div className="submenu governanceMenu">
-          <ul><li><b>IAC Overview</b></li><li>History</li><li>Global Capability Center</li><li>Leadership</li><li>Mission & Vision</li><li>Diversity & Inclusion</li><li>CSR</li><li>Innovation</li><li>Success Stories</li><li>FAQs</li></ul>
-          <ul><li><b>News Articles</b></li><li>Top Stories</li><li>Newsletters</li><li>eMagaines</li></ul>
-          <ul><li><b>Events</b></li><li>GDOP</li><li>Town Hall</li><li>Leadership visits</li></ul>
-          <ul><li><b>Engagements</b></li><li>Employee Resource Groups</li><li>Testimonials</li><li>Business Integration</li></ul>
+          <div className="submenu governanceMenu" onMouseOut={this.subMenuMouseOut}>
+          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
+          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
+          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
+          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>    
           </li>
           <li><a href="products">Engage Us</a>
-          <div className="submenu engageMenu">
-          <ul><li><b>IAC Overview</b></li><li>History</li><li>Global Capability Center</li><li>Leadership</li><li>Mission & Vision</li><li>Diversity & Inclusion</li><li>CSR</li><li>Innovation</li><li>Success Stories</li><li>FAQs</li></ul>
-          <ul><li><b>News Articles</b></li><li>Top Stories</li><li>Newsletters</li><li>eMagaines</li></ul>
-          <ul><li><b>Events</b></li><li>GDOP</li><li>Town Hall</li><li>Leadership visits</li></ul>
-          <ul><li><b>Engagements</b></li><li>Employee Resource Groups</li><li>Testimonials</li><li>Business Integration</li></ul>
+          <div className="submenu engageMenu" onMouseOut={this.subMenuMouseOut}>
+          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
+          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
+          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
+          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>   
           </li>
           <li><a href="products">Quick Links</a>
-          <div className="submenu quickLinksMenu">
-          <ul><li><b>IAC Overview</b></li><li>History</li><li>Global Capability Center</li><li>Leadership</li><li>Mission & Vision</li><li>Diversity & Inclusion</li><li>CSR</li><li>Innovation</li><li>Success Stories</li><li>FAQs</li></ul>
-          <ul><li><b>News Articles</b></li><li>Top Stories</li><li>Newsletters</li><li>eMagaines</li></ul>
-          <ul><li><b>Events</b></li><li>GDOP</li><li>Town Hall</li><li>Leadership visits</li></ul>
-          <ul><li><b>Engagements</b></li><li>Employee Resource Groups</li><li>Testimonials</li><li>Business Integration</li></ul>
+          <div className="submenu quickLinksMenu" onMouseOut={this.subMenuMouseOut}>
+          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
+          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
+          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
+          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>    
           </li>       
           <li className="actionIcon"><a href="location"><i className="fa fa-search" aria-hidden="true"></i></a></li>

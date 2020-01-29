@@ -94,7 +94,7 @@ ul.menu .fa{
 }
 
 ul.menu li:not(:last-child){
-  padding-top:20px;
+  padding-top:1.2em;
 }
 
 ul.menu > li:last-child{
@@ -123,9 +123,11 @@ ul.menu li a:hover {
   padding-bottom: 28px;
   border-bottom: 3px solid #f0ab00;
 }
-ul.menu li a:hover ~ .submenu{
-  display: flex;
+.submenu ul li a:hover{
+  border:none;
+  text-decoration: underline;
 }
+
 .btn {
   padding: 0.8em;
   color: #fff;
@@ -156,31 +158,19 @@ ul.menu li a:hover ~ .submenu{
   top:72px;
   display:none;
 }
-
 .slideshow{
   clear:both;
 }
 .homeMenu{
   transform: translateX(-25%);
-  width:920px;
   overflow:hidden;
+  display:flex;
 }
 
-.aboutMenu{
-  left:350px;  
-}
 .sliderSection {
   width:100%;
   clear:both;
   overflow: hidden;
-}
-
-.contactMenu{
-  left:500px;  
-}
-
-.productsMenu{
-  left:700px;  
 }
 
 .submenu ul{
@@ -193,7 +183,10 @@ ul.menu li a:hover ~ .submenu{
     color:#333;
     padding:10px;
 }
-
+.submenu ul li a{
+  color:#333;
+  text-transform: none;
+}  
 .banner{
  background: url(assets/images/backgroundpicture.svg) no-repeat left top;
  width:100%;
@@ -256,16 +249,41 @@ div.icon a{
   ul.menu > li:last-child{
     padding:1.2em;
   }
-  ul.menu li a:hover ~ .submenu{
-    display: none;
-  }
+  /*ul.menu li a:hover ~ .submenu{
+    display: block;
+  }*/
   ul.menu{
     float: left;
     padding:0px;
     margin:0px;
   }
+  .submenu {
+    width: unset;
+    transform: unset;
+    overflow: hidden;
+    display: none;
+    background:unset;
+    justify-content: space-between;
+    position: relative;
+    z-index: unset;
+    top: unset; 
+  }  
+  .submenu ul li:first-child {
+    color:#fff;
+    font-weight: bold;
+  }
+  /*
+  ul.menu li a:hover ~ .submenu{
+    display: block;
+    transition:0.3s ease;
+  }  
+  .submenu:hover{
+    display: block;
+  } */ 
+  .submenu ul li a{
+     color:#fff;
+  }  
 }
-
 @media screen and (max-width: 360px) {  
 .details {
   float:left;
