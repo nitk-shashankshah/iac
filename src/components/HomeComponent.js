@@ -8,7 +8,10 @@ import slider5 from '../assets/images/it.png';
 import slider6 from '../assets/images/manufacturing.png';
 import slider7 from '../assets/images/researchndev.png';
 import iaclogo from '../assets/images/iaclogo.svg';
-import Radium from "radium";
+import login from '../assets/images/login.svg';
+import search from '../assets/images/search.svg';
+import locate from '../assets/images/locateus.svg';
+
 import 'font-awesome/css/font-awesome.min.css';
 var Coverflow = require('react-coverflow');
 
@@ -24,7 +27,6 @@ class HomeComponent extends React.Component {
     this.menuMouseOver = this.menuMouseOver.bind(this);
     this.subMenuMouseOut = this.subMenuMouseOut.bind(this);    
     this.menuMouseOut = this.menuMouseOut.bind(this);
-    alert(this.state.openMenu);
   }
 
   menuMouseOut() {
@@ -46,57 +48,56 @@ class HomeComponent extends React.Component {
 
   render() {
   return (
-    <div>
+    <div onMouseOut={this.subMenuMouseOut}>
       <header className="header">
-        <img src={iaclogo} className="App-logo" alt="logo" />
-        <ul className={this.state.isResponsive ? "responsive menu" : "menu"}>
-          <li><a href="home" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(1)}>About Us</a>
-          <div className={this.state.openMenu == 1 ? "submenu homeMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(1)} onMouseOut={this.subMenuMouseOut}>
+        <img className="App-logo" src={iaclogo} alt="logo" />
+          <div className={this.state.isResponsive ? "responsive menu" : "menu"}>
+          <div class="item"><a href="home" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(1)}>About Us</a>
+          <div className={this.state.openMenu === 1 ? "submenu homeMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(1)} onMouseOut={this.subMenuMouseOut}>
           <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
           <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
           <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
           <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>  
-          </li>
-          <li><a href="about">Capabilities</a>
-          <div className="submenu capabilityMenu" onMouseOut={this.subMenuMouseOut}>
+          </div>
+          <div class="item"><a href="about" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(2)}>Capabilities</a>
+          <div className={this.state.openMenu === 2 ? "submenu capabilityMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(2)} onMouseOut={this.subMenuMouseOut}>
           <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
           <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
           <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
           <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>    
-          </li>
-          <li><a href="governance">Governance</a>
-          <div className="submenu governanceMenu" onMouseOut={this.subMenuMouseOut}>
+          </div>
+          <div class="item"><a href="governance" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(3)}>Governance</a>
+          <div className={this.state.openMenu === 3 ? "submenu governanceMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(3)} onMouseOut={this.subMenuMouseOut}>
           <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
           <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
           <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
           <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>    
-          </li>
-          <li><a href="products">Engage Us</a>
-          <div className="submenu engageMenu" onMouseOut={this.subMenuMouseOut}>
+          </div>
+          <div class="item"><a href="products" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(4)}>Engage Us</a>
+          <div className={this.state.openMenu === 4 ? "submenu engageMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(4)} onMouseOut={this.subMenuMouseOut}>
           <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
           <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
           <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
           <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>   
-          </li>
-          <li><a href="products">Quick Links</a>
-          <div className="submenu quickLinksMenu" onMouseOut={this.subMenuMouseOut}>
+          </div>
+          <div class="item"><a href="products" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(5)}>Quick Links</a>
+          <div className={this.state.openMenu === 5 ? "submenu quickLinksMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(5)} onMouseOut={this.subMenuMouseOut}>
           <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
           <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
           <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
           <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
           </div>    
-          </li>       
-          <li className="actionIcon"><a href="location"><i className="fa fa-search" aria-hidden="true"></i></a></li>
-          <li className="actionIcon"><a href="user"><i className="fa fa-user" aria-hidden="true"></i></a></li>
-          <li className="actionIcon"><a href="search"><i className="fa fa-map-marker" aria-hidden="true"></i></a></li>
-          <li><img src={logo} className="extra-logo" alt="logo" /></li>
-        </ul>
-        <div className="icon"><i className="fa fa-bars" onClick={this.rollMenu}></i></div>
-        <div style={{"clear":"both"}}/>     
+          </div>       
+          <div className="actionIcon"><a href="search"><img src={search} alt="logo" /></a></div>
+          <div className="actionIcon"><a href="login"><img src={login} alt="logo" /></a></div>
+          <div className="actionIcon"><a href="locate"><img src={locate} alt="logo" /></a></div>
+          <img src={logo} className="extra-logo" alt="logo" />
+          </div>
+          <div className="icon"><i className="fa fa-bars" onClick={this.rollMenu}></i></div>
       </header>
       <main>
         <div className="banner">
@@ -159,4 +160,4 @@ class HomeComponent extends React.Component {
   }
 }
 
-export default Radium(HomeComponent);
+export default HomeComponent;
