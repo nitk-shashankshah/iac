@@ -5,18 +5,16 @@
 img.App-logo {
   pointer-events: none;
   box-sizing: border-box;
-  width:calc(7.2vw);
-  min-width:80px;
-  margin-top:calc(10px + 0.1vw);
+  width:85px;
+  margin-top:10px;
   float:left;
 }
 
 .extra-logo {
   pointer-events: none;
-  width:8vw;
-  min-width: 100px;
-  margin-top:1vw;
-  padding-left:1.5vw;
+  width: 120px;
+  padding-left:20px;
+  margin-top:-10px;
 }
 
 .header {
@@ -24,55 +22,48 @@ img.App-logo {
   align-items: center;
   justify-content: space-between;
   color: white;
-  height: 6.1vw;
-  min-height:74px;
+  height:74px;
   box-sizing: border-box;
-  padding:0% 3%;
+  padding:0% 30px;
+  overflow: hidden;
 }
 
-.details {
-  float:left;
-  width: 60%;
-}
 .chatBtn{
   right:0px;
   background:#007fbd;
   color:#fff;
   cursor: pointer;
-  padding:0.5em;
+  padding:5px 25px;
+  height:100px;
+  padding-bottom:15px;
   box-sizing: border-box;
   text-align: center;
-  position:absolute;
-  top:372px;
-  -ms-transform: translateY(-50%);
+  position:relative;
+  font-size:16px;
+  top:50%;
   transform: translateY(-50%);
-}
-
-.chatBtn .fa-comments{
-  font-size:2em;
 }
 
 .chatBtn p{
   padding:0px;
-  margin:0.5em 0px;
+  margin:0px 0px;
 }
 
 .detailSection {
   width:100%;
-  position: absolute;
-  top: 372px;
+  position: relative;
+  top: 30%;
   padding-left:5%;
   box-sizing: border-box;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+}
+
+.details {
+  float:left;
+  width: 50%;
 }
 
 .detailSection p {
   color:#fff;
-}
-
-.fa-search {
-  color: #f0ab00;
 }
 
 .menu{
@@ -84,80 +75,204 @@ img.App-logo {
   background:#282c34;
 }
 
+.pageHeading {
+  margin:0px!important;
+  font-size:52px!important;
+  color:#f0ab00!important;
+  letter-spacing: 1px!important;
+  font-weight:normal!important;
+}
+.capabilities {
+  margin:10px auto;
+  text-align: center;
+  font-size:28px!important;
+  color:#999!important;
+  letter-spacing: 1px!important;
+  font-weight:normal!important;
+}
+
 .item{
-  font-size: calc(1.43vw);
+  font-size: 20px;
+  padding-top:20px;
 }
-h3.pageHeading {
-  margin:0px;
-  font-size:1.6vw;
-  color:#f0ab00;
-}
-@media screen and (min-width: 968px) and (max-width: 1199px)  {
-  .item{
-    font-size: calc(12px + 0.5vw);
-    padding-top:calc(10px + 1.4vw);
+
+@media screen and (max-width: 1235px) {
+   .menu{
+    clear: both;
+    display: none;    
+    float: left;
+    margin: 0px;
+    padding: 0px 20px;
+    background: #282c34;
+    z-index: 1000;
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    top:72px;
   }
-  h3.pageHeading {
-    font-size:calc(14px + 2vw);
+  
+  .responsive{
+    display:block!important;
   }
+
+  div.icon {
+    display: block;
+  }
+  div.icon .fa{
+    cursor: pointer;
+    font-size: 2em;
+  }
+  .menu div a {
+    padding-left:20px;
+  }
+  .menu div a:hover {
+    color:#f0ab00;
+    border-bottom: none;
+  }
+
+  ul.menu{
+    float: left;
+    padding:0px;
+    margin:0px;
+  }
+  .submenu {
+    width: unset;
+    transform: unset;
+    overflow: hidden;
+    display: none;
+    background:unset;
+    justify-content: space-between;
+    position: relative;
+    z-index: unset;
+    top: unset; 
+  }  
+  .submenu ul li:first-child {
+    color:#fff;
+    font-weight: bold;
+  }
+  
   .detailSection p {
-    font-size:calc(14px + 1vw);
+    font-size:calc(24px);
+    letter-spacing: 1px;
+  }
+  .submenu ul li a{
+     color:#fff;
+  }  
+}
+
+@media screen and (max-width: 360px) {  
+.details {
+  float:left;
+  width: 100%;
+}
+.chatBtn {
+  background: #007fbd;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  position: absolute;
+  top: 160px;
+  right:unset;
+}
+}
+@media screen and (max-width: 599px) {
+  .detailSection {
+    top: 5%;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1399px)  {
-  .item{
-    font-size: calc(12px + 0.5vw);
-    padding-top:calc(10px + 1.4vw);
+@media screen  and (min-width: 600px) and (max-width: 700px) {
+  .detailSection {
+    top: 25%;
   }
-  h3.pageHeading {
-    font-size:calc(14px + 1.5vw);
+}
+
+@media screen  and (min-width: 701px) and (max-width: 968px) {
+  .detailSection {
+    top: 30%;
   }
+}
+
+@media screen and (min-width: 968px) and (max-width: 1200px)  {
+  .detailSection {
+    top: 25%;
+  }
+  
+  .details {
+    float:left;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1265px)  {
+  .detailSection {
+    top: 20%;
+  }
+  
+  .details {
+    float:left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1266px) and (max-width: 1400px)  {
+  .detailSection {
+    top: 25%;
+  }
+  
+  .details {
+    float:left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1400px)  {
+  .detailSection {
+    top: 30%;
+  }  
+}
+
+@media screen and (max-width: 968px) {
+  .details {
+    float:left;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 968px) {
+
   .detailSection p {
-    font-size:calc(14px + 1vw);
+    font-size:24px;
   }
-}
-
-@media screen and (min-width: 1400px) {
-  .item{
-    font-size: calc(10px + 1vw);
-    padding-top:calc(1.9vw);
+  .menu > div {
+    padding-right:30px;
   }
-  h3.pageHeading {
-    font-size:calc(12px + 2vw);
+  .menu > div.actionIcon {
+    padding-right:calc(20px);
   }
-  .detailSection p {
-    font-size:calc(14px + 1vw);
-  }
-}
-
-.menu .fa{
-  font-size: 1.8em;
-  margin-top: calc(-1vmin);
-}
-
-.menu > div {
-  padding-right:calc(2.65vw);
-}
-
-.menu > div.actionIcon {
-  padding-right:calc(1.2vw);
-  padding-top: calc(1.9vw);
-}
-
-
-.menu > div.actionIcon img{
-  width:2vw;
 }
 
 .menu > div.actionIcon a:hover{
   border:none;
 }
+.locateus img{
+  width:40px!important;
+  margin-top:8px!important;
+  margin-left: -5px;
+}
+.menu > div.actionIcon img{
+  width:30px;
+  margin-top:-15px;
+}
+
 .menu > div a{
   color:#fff;
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: bottom;
+  letter-spacing: 1px;
 }
 .menu > div a:hover {
   color:#f0ab00;
@@ -170,11 +285,14 @@ h3.pageHeading {
 }
 
 .btn {
-  padding: 0.8em;
+  padding: 8px 20px;
   color: #fff;
+  font-size: 22px;
   text-decoration:none;
-  margin:5px;
+  margin:10px 0px;
   transition: 0.3s ease;
+  word-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 .btn:hover {
@@ -187,6 +305,7 @@ h3.pageHeading {
 
 .activeBtn {
   background: #525657;
+  margin-left:15px;
 }
 
 .submenu{
@@ -196,7 +315,7 @@ h3.pageHeading {
   justify-content: space-between;
   position: absolute;
   z-index:5;
-  top:72px;
+  top:74px;
   display:none;
 }
 
@@ -238,13 +357,6 @@ h3.pageHeading {
   overflow:hidden;
   display:flex;
 }
-
-.sliderSection {
-  width:100%;
-  clear:both;
-  overflow: hidden;
-}
-
 .submenu ul{
   list-style-type:none;
   padding:10px 20px;
@@ -260,7 +372,7 @@ h3.pageHeading {
   text-transform: none;
 }  
 .banner{
- background: url(assets/images/backgroundpicture.svg) repeat-x left top;
+ background: url(assets/images/background.jpg) no-repeat left top;
  width:100%;
  background-size: cover;
  height:585px;
@@ -283,96 +395,41 @@ div.icon {
 div.icon a{
   color:#fff;
 }
+#carousel {
+  width:70vw;
+  height:450px;
+  position:relative;
+  clear:both;
+  overflow:hidden;
+  margin:0px auto;
+}
 
-@media screen and (max-width: 968px) {
-  .menu{
-    clear: both;
-    display: none;    
-    float: left;
-    margin: 0px;
-    padding: 0px 20px;
-    background: #282c34;
-    z-index: 1000;
-    width: 100%;
-    position: absolute;
-    padding: 0px;
-    top:72px;
-  }
-  .responsive{
-    display:block!important;
-  }
-  div.icon {
-    display: block;
-  }
-  div.icon .fa{
-    cursor: pointer;
-    font-size: 2em;
-  }
-  .menu div a {
-    padding-left:20px;
-  }
-  .menu div a:hover {
-    color:#f0ab00;
-    border-bottom: none;
-  }
-  .menu > div:last-child{
-    padding:1.2em;
-  }
-  /*ul.menu li a:hover ~ .submenu{
-    display: block;
-  }*/
-  ul.menu{
-    float: left;
-    padding:0px;
-    margin:0px;
-  }
-  .submenu {
-    width: unset;
-    transform: unset;
-    overflow: hidden;
-    display: none;
-    background:unset;
-    justify-content: space-between;
-    position: relative;
-    z-index: unset;
-    top: unset; 
-  }  
-  .submenu ul li:first-child {
-    color:#fff;
-    font-weight: bold;
-  }
-  /*
-  ul.menu li a:hover ~ .submenu{
-    display: block;
-    transition:0.3s ease;
-  }  
-  .submenu:hover{
-    display: block;
-  } */
-  h3.pageHeading {
-    font-size:calc(32px);
-  }
-  .detailSection p {
-    font-size:calc(24px);
-  }
-  .submenu ul li a{
-     color:#fff;
-  }  
+
+#prev{
+  display:block;
+  width:35px;
+  height:100px;
+  background:url(assets/images/arrowleft.png) no-repeat left top;
+  margin:120px 20px;
 }
-@media screen and (max-width: 360px) {  
-.details {
-  float:left;
-  width: 100%;
+
+#next{
+  display:block;
+  width:35px;
+  height:100px;  
+  background:url(assets/images/arrowright.png) no-repeat left top;  
+  margin:120px 20px;
 }
-.chatBtn {
-  background: #007fbd;
-  color: #fff;
-  cursor: pointer;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  position: absolute;
-  top: 200px;
-  right:unset;
+
+#carousel img {
+  visibility:hidden; /* hide images until carousel can handle them */
+  cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+  opacity:0.1;
+  width:273px;
 }
+
+.slider{
+  display: flex;
+  flex-direction: horizontal;  
+  justify-content: space-around;
 }
