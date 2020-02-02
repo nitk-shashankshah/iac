@@ -34,7 +34,7 @@ import jQuery from 'jquery';
     function initializeCarouselData() {
       data = {
         itemsContainer:         $(carousel),
-        totalItems:             $(carousel).find('div').length,
+        totalItems:             $(carousel).find('img').length,
         containerWidth:         $(carousel).width(),
         containerHeight:        $(carousel).height(),
         currentCenterItem:      null,
@@ -51,7 +51,7 @@ import jQuery from 'jquery';
         rightItemsCount:        0,
         performingSetup:        true
       };
-      data.itemsContainer.find('div').removeClass(options.activeClassName);
+      data.itemsContainer.find('img').removeClass(options.activeClassName);
     }
 
     /**
@@ -83,20 +83,17 @@ import jQuery from 'jquery';
      * if a user instead manually specifies that information.
      */
     function preload(callback) {
-      /*if (options.preloadImages === false) {
+      if (options.preloadImages === false) {
         callback();
         return;
       }
-*/
 
-      /*var $imageElements = data.itemsContainer.find('div'), loadedImages = 0, totalImages = $imageElements.length;*/
-      callback();
+      var $imageElements = data.itemsContainer.find('img'), loadedImages = 0, totalImages = $imageElements.length;
 
-      /*$imageElements.each(function () {
+      $imageElements.each(function () {
         $(this).bind('load', function () {
           // Add to number of images loaded and see if they are all done yet
           loadedImages += 1;
-          alert(loadedImages);
           if (loadedImages === totalImages) {
             // All done, perform callback
             callback();
@@ -111,7 +108,7 @@ import jQuery from 'jquery';
         if (this.complete) {
           $(this).trigger('load');
         }
-      });*/
+      });
     }
 
     /**
@@ -120,12 +117,12 @@ import jQuery from 'jquery';
      * original dimensions.
      */
     function setOriginalItemDimensions() {
-      data.itemsContainer.find('div').each(function () {
+      data.itemsContainer.find('img').each(function () {
         if ($(this).data('original_width') == undefined || options.forcedImageWidth > 0) {
-          $(this).data('original_width', $(this).css("width"));
+          $(this).data('original_width', $(this).width());
         }
         if ($(this).data('original_height') == undefined || options.forcedImageHeight > 0) {
-          $(this).data('original_height', $(this).css("height"));
+          $(this).data('original_height', $(this).height());
         }
       });
     }
@@ -138,7 +135,7 @@ import jQuery from 'jquery';
      */
     function forceImageDimensionsIfEnabled() {
       if (options.forcedImageWidth && options.forcedImageHeight) {
-        data.itemsContainer.find('div').each(function () {
+        data.itemsContainer.find('img').each(function () {
           $(this).width(options.forcedImageWidth);
           $(this).height(options.forcedImageHeight);
         });
@@ -152,7 +149,7 @@ import jQuery from 'jquery';
      */
     function preCalculatePositionProperties() {
       // The 0 index is the center item in the carousel
-      var $firstItem = data.itemsContainer.find('div:first');
+      var $firstItem = data.itemsContainer.find('img:first');
 
       data.calculations[0] = {
         distance: 0,
@@ -164,7 +161,6 @@ import jQuery from 'jquery';
       // perform the calcations based on our user options
       var horizonOffset = options.horizonOffset;
       var separation = options.separation;
-
       for (var i = 1; i <= options.flankingItems + 2; i++) {
         if (i > 1) {
           horizonOffset *= options.horizonOffsetMultiplier;
@@ -198,10 +194,11 @@ import jQuery from 'jquery';
      */
     function setupCarousel() {
       // Fill in a data array with jQuery objects of all the images
-      data.items = data.itemsContainer.find('div');
+      data.items = data.itemsContainer.find('img');
       for (var i = 0; i < data.totalItems; i++) {
         data.items[i] = $(data.items[i]);
       }
+
       // May need to set the horizon if it was set to auto
       if (options.horizon === 0) {
         if (options.orientation === 'horizontal') {
@@ -214,16 +211,16 @@ import jQuery from 'jquery';
       // Default all the items to the center position
       data.itemsContainer
         .css('position','relative')
-        .find('div')
+        .find('img')
           .each(function () {
             // Figure out where the top and left positions for center should be
             var centerPosLeft, centerPosTop;
             if (options.orientation === 'horizontal') {
-              centerPosLeft = (data.containerWidth / 2) - (parseInt($(this).data('original_width')) / 2);
-              centerPosTop = options.horizon - (parseInt($(this).data('original_height')) / 2);
+              centerPosLeft = (data.containerWidth / 2) - ($(this).data('original_width') / 2);
+              centerPosTop = options.horizon - ($(this).data('original_height') / 2);
             } else {
-              centerPosLeft = options.horizon - (parseInt($(this).data('original_width')) / 2);
-              centerPosTop = (data.containerHeight / 2) - (parseInt($(this).data('original_height')) / 2);
+              centerPosLeft = options.horizon - ($(this).data('original_width') / 2);
+              centerPosTop = (data.containerHeight / 2) - ($(this).data('original_height') / 2);
             }
             $(this)
               // Apply positioning and layering to the images
@@ -303,10 +300,10 @@ import jQuery from 'jquery';
       }
 
       var distanceFactor = Math.pow(options.sizeMultiplier, newDistanceFromCenter)
-      var newWidth = distanceFactor * parseInt($item.data('original_width'));
-      var newHeight = distanceFactor * parseInt($item.data('original_height'));
-      var widthDifference = Math.abs(parseInt($item.css("width")) - newWidth);
-      var heightDifference = Math.abs(parseInt($item.css("height")) - newHeight);
+      var newWidth = distanceFactor * $item.data('original_width');
+      var newHeight = distanceFactor * $item.data('original_height');
+      var widthDifference = Math.abs($item.width() - newWidth);
+      var heightDifference = Math.abs($item.height() - newHeight);
 
       var newOffset = calculations.offset
       var newDistance = calculations.distance;
@@ -442,7 +439,7 @@ import jQuery from 'jquery';
         data.currentlyMoving = true;
         data.itemsAnimating = 0;
         data.carouselRotationsLeft += rotations;
-
+        
         if (options.quickerForFurther === true) {
           // Figure out how fast the carousel should rotate
           if (rotations > 1) {
@@ -472,7 +469,7 @@ import jQuery from 'jquery';
             // when we have an item switch sides. The right side will always have 1 more in that case
             if (data.totalItems % 2 == 0) {
               newPosition += 1;
-            }
+            } 
           }
 
           moveItem($item, newPosition);
@@ -486,7 +483,7 @@ import jQuery from 'jquery';
      * to get the clicked item to the center, or will fire the custom event
      * the user passed in if the center item is clicked
      */
-    $(this).find('div').bind("click", function () {
+    $(this).find('img').bind("click", function () {
       var itemPosition = $(this).data().currentPosition;
 
       if (options.imageNav == false) {
@@ -506,7 +503,7 @@ import jQuery from 'jquery';
       // Remove autoplay
       autoPlay(true);
       options.autoPlay = 0;
-
+      
       var rotations = Math.abs(itemPosition);
       if (itemPosition == 0) {
         options.clickedCenter($(this));
@@ -530,7 +527,7 @@ import jQuery from 'jquery';
      * make sure that they aren't active for certain situations
      */
     $(this).find('a').bind("click", function (event) {
-      var isCenter = $(this).find('div').data('currentPosition') == 0;
+      var isCenter = $(this).find('img').data('currentPosition') == 0;
       // should we disable the links?
       if (options.linkHandling === 1 || // turn off all links
           (options.linkHandling === 2 && !isCenter)) // turn off all links except center
@@ -576,7 +573,7 @@ import jQuery from 'jquery';
 
       rotateCarousel(1);
     }
-
+    
     /**
      * Navigation with arrow keys
      */
@@ -616,7 +613,7 @@ import jQuery from 'jquery';
       options = $.extend({}, $.fn.waterwheelCarousel.defaults, newOptions);
 
       initializeCarouselData();
-      data.itemsContainer.find('div').hide();
+      data.itemsContainer.find('img').hide();
       forceImageDimensionsIfEnabled();
 
       preload(function () {
@@ -626,7 +623,7 @@ import jQuery from 'jquery';
         setupStarterRotation();
       });
     }
-
+    
     this.next = function() {
       autoPlay(true);
       options.autoPlay = 0;
@@ -655,14 +652,14 @@ import jQuery from 'jquery';
     sizeMultiplier:             0.7, // determines how drastically the size of each item changes
     opacityMultiplier:          0.8, // determines how drastically the opacity of each item changes
     horizon:                    0,   // how "far in" the horizontal/vertical horizon should be set from the container wall. 0 for auto
-    flankingItems:              3,   // the number of items visible on either side of the center
+    flankingItems:              3,   // the number of items visible on either side of the center                  
 
     // animation
     speed:                      300,      // speed in milliseconds it will take to rotate from one to the next
     animationEasing:            'linear', // the easing effect to use when animating
     quickerForFurther:          true,     // set to true to make animations faster when clicking an item that is far away from the center
     edgeFadeEnabled:            false,    // when true, items fade off into nothingness when reaching the edge. false to have them move behind the center image
-
+    
     // misc
     linkHandling:               2,                 // 1 to disable all (used for facebox), 2 to disable all but center (to link images out)
     autoPlay:                   0,                 // indicate the speed in milliseconds to wait before autorotating. 0 to turn off. Can be negative
@@ -673,7 +670,7 @@ import jQuery from 'jquery';
     imageNav:                   true,              // clicking a non-center image will rotate that image to the center
 
     // preloader
-    preloadImages:              true,  // disable/enable the image preloader.
+    preloadImages:              true,  // disable/enable the image preloader. 
     forcedImageWidth:           0,     // specify width of all images; otherwise the carousel tries to calculate it
     forcedImageHeight:          0,     // specify height of all images; otherwise the carousel tries to calculate it
 

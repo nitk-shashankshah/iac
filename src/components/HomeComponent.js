@@ -153,13 +153,22 @@ class HomeComponent extends React.Component {
         <div class="slider">
         <a href="#" id="prev"></a>
         <div id="carousel">
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider1} id="item-1" /></div></a>
+          {/*<a href="#"><div style={{"background":"#fff"}}><img src={slider1} id="item-1" /></div></a>
           <a href="#"><div style={{"background":"#fff"}}><img src={slider6} id="item-2" /></div></a>
           <a href="#"><div style={{"background":"#fff"}}><img src={slider3} id="item-3" /></div></a>
           <a href="#"><div style={{"background":"#fff"}}><img src={slider4} id="item-4" /></div></a>
           <a href="#"><div style={{"background":"#fff"}}><img src={slider1} id="item-5" /></div></a>
           <a href="#"><div style={{"background":"#fff"}}><img src={slider6} id="item-6" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider7} id="item-7" /></div></a>
+          <a href="#"><div style={{"background":"#fff"}}><img src={slider7} id="item-7" /></div></a>*/}
+
+          <a href="#"><div style={{"background":`url(${slider1})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-1"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider2})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-2"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider3})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-3"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider4})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-4"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider5})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-5"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider6})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-6"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider7})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-7"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+     
         </div>
         <a href="#" id="next"></a>
         </div>
