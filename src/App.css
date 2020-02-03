@@ -86,6 +86,7 @@ img.App-logo {
   margin:10px auto;
   text-align: center;
   font-size:28px!important;
+  line-height:90px;
   color:#999!important;
   letter-spacing: 1px!important;
   font-weight:normal!important;
@@ -185,11 +186,16 @@ img.App-logo {
 
 @media screen  and (min-width: 600px) and (max-width: 700px) {
   .detailSection {
-    top: 25%;
+    top: 15%;
+  }
+}
+@media screen  and (min-width: 701px) and (max-width: 787px) {
+  .detailSection {
+    top: 20%;
   }
 }
 
-@media screen  and (min-width: 701px) and (max-width: 968px) {
+@media screen  and (min-width: 788px) and (max-width: 968px) {
   .detailSection {
     top: 30%;
   }
@@ -244,7 +250,7 @@ img.App-logo {
 @media screen and (min-width: 968px) {
 
   .detailSection p {
-    font-size:24px;
+    font-size:22px;
   }
   .menu > div {
     padding-right:30px;
@@ -396,21 +402,18 @@ div.icon a{
   color:#fff;
 }
 #carousel {
-  width:70vw;
-  height:450px;
-  position:relative;
-  clear:both;
-  overflow:hidden;
-  margin:0px auto;
+  width:900px;
+  height:400px;
+  margin:-20px auto;
+  float:left;
 }
-
 
 #prev{
   display:block;
   width:35px;
   height:100px;
   background:url(assets/images/arrowleft.png) no-repeat left top;
-  margin:120px 20px;
+  margin-top:130px;
 }
 
 #next{
@@ -418,21 +421,21 @@ div.icon a{
   width:35px;
   height:100px;  
   background:url(assets/images/arrowright.png) no-repeat left top;  
-  margin:120px 20px;
+  margin-top:130px;
 }
 
-#carousel img {
-  visibility:hidden; /* hide images until carousel can handle them */
-  cursor:pointer; /* otherwise it's not as obvious items can be clicked */
-  opacity:0.1;
-  width:273px;
+#carousel div p {
+  background: rgb(255, 255, 255, 0.8);
 }
 
 .carousel-center p{
   background:none!important;
+  transition: 0.2s ease-in-out;
 }
 .slider{
   display: flex;
   flex-direction: horizontal;  
-  justify-content: space-around;
+  justify-content: space-between;
+  width:1100px;
+  margin:0px auto;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/images/logo.svg';
 import slider1 from '../assets/images/eks.png';
 import slider2 from '../assets/images/gfin.svg';
-import slider3 from '../assets/images/global commercial.png';
+import slider3 from '../assets/images/global_commercial.png';
 import slider4 from '../assets/images/globalmarketing.png';
 import slider5 from '../assets/images/it.svg';
 import slider6 from '../assets/images/manufacturing.png';
@@ -20,7 +20,7 @@ var Coverflow = require('react-coverflow');
 class HomeComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       images: [slider1, slider2, slider3, slider4, slider5,slider6, slider7],
       isResponsive: false,
       openMenu: 0
@@ -147,33 +147,23 @@ class HomeComponent extends React.Component {
           <img src={chat} />
             <p>Chat With Us</p>
           </div>
-        </div>                  
+        </div>
         <div class="sliderSection">     
         <p className="capabilities">Our Capabilities</p>
         <div class="slider">
         <a href="#" id="prev"></a>
         <div id="carousel">
-          {/*<a href="#"><div style={{"background":"#fff"}}><img src={slider1} id="item-1" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider6} id="item-2" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider3} id="item-3" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider4} id="item-4" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider1} id="item-5" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider6} id="item-6" /></div></a>
-          <a href="#"><div style={{"background":"#fff"}}><img src={slider7} id="item-7" /></div></a>*/}
-
-          <a href="#"><div style={{"background":`url(${slider1})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-1"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="#"><div style={{"background":`url(${slider2})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-2"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="#"><div style={{"background":`url(${slider3})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-3"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="#"><div style={{"background":`url(${slider4})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-4"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="#"><div style={{"background":`url(${slider5})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-5"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="#"><div style={{"background":`url(${slider6})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-6"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="#"><div style={{"background":`url(${slider7})`,"width":"273px","height":"318px","background-size":"cover"}} id="item-7"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-     
+          <a href="#"><div style={{"background":`url(${slider1})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-1"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider2})`,"background-position":"left bottom","width":"266px","height":"318px","background-size":"contain"}} id="item-2"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider3})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-3"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider4})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-4"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider5})`,"background-position":"left bottom","width":"268px","height":"320px","background-size":"contain"}} id="item-5"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider6})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-6"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
+          <a href="#"><div style={{"background":`url(${slider7})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-7"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>     
         </div>
         <a href="#" id="next"></a>
         </div>
-        </div>
-
+        </div> 
         </main>
         </div>
   );

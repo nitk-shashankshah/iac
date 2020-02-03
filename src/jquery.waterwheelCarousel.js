@@ -12,6 +12,7 @@
  * for use with the jQuery JavaScript Framework
  * http://www.jquery.com
  */
+"use strict";
 import jQuery from 'jquery';
 
 ;(function ($) {
@@ -83,35 +84,7 @@ import jQuery from 'jquery';
      * if a user instead manually specifies that information.
      */
     function preload(callback) {
-      /*if (options.preloadImages === false) {
-        callback();
-        return;
-      }
-*/
-
-      /*var $imageElements = data.itemsContainer.find('div'), loadedImages = 0, totalImages = $imageElements.length;*/
       callback();
-
-      /*$imageElements.each(function () {
-        $(this).bind('load', function () {
-          // Add to number of images loaded and see if they are all done yet
-          loadedImages += 1;
-          alert(loadedImages);
-          if (loadedImages === totalImages) {
-            // All done, perform callback
-            callback();
-            return;
-          }
-        });
-        // May need to manually reset the src to get the load event to fire
-        // http://stackoverflow.com/questions/7137737/ie9-problems-with-jquery-load-event-not-firing
-        $(this).attr('src', $(this).attr('src'));
-
-        // If browser has cached the images, it may not call trigger a load. Detect this and do it ourselves
-        if (this.complete) {
-          $(this).trigger('load');
-        }
-      });*/
     }
 
     /**
@@ -168,7 +141,7 @@ import jQuery from 'jquery';
       for (var i = 1; i <= options.flankingItems + 2; i++) {
         if (i > 1) {
           horizonOffset *= options.horizonOffsetMultiplier;
-          separation *= options.separationMultiplier;
+          //separation *= options.separationMultiplier;
         }
         data.calculations[i] = {
           distance: data.calculations[i-1].distance + separation,
@@ -228,7 +201,7 @@ import jQuery from 'jquery';
             $(this)
               // Apply positioning and layering to the images
               .css({
-                'left': centerPosLeft,
+                'left': 100,
                 'top': centerPosTop,
                 'visibility': 'visible',
                 'position': 'absolute',
@@ -239,7 +212,7 @@ import jQuery from 'jquery';
               // it's original form
               .data({
                 top:             centerPosTop,
-                left:            centerPosLeft,
+                left:            100,
                 oldPosition:     0,
                 currentPosition: 0,
                 depth:           0,
@@ -294,7 +267,6 @@ import jQuery from 'jquery';
      */
     function performCalculations($item, newPosition) {
       var newDistanceFromCenter = Math.abs(newPosition);
-
       // Distance to the center
       if (newDistanceFromCenter < options.flankingItems + 1) {
         var calculations = data.calculations[newDistanceFromCenter];
@@ -304,16 +276,17 @@ import jQuery from 'jquery';
 
       var distanceFactor = Math.pow(options.sizeMultiplier, newDistanceFromCenter)
       var newWidth = distanceFactor * parseInt($item.data('original_width'));
-      var newHeight = distanceFactor * parseInt($item.data('original_height'));
-      var widthDifference = Math.abs(parseInt($item.css("width")) - newWidth);
-      var heightDifference = Math.abs(parseInt($item.css("height")) - newHeight);
+      var newHeight = parseInt($item.data('original_height')) - Math.abs(newPosition)*25;
 
       var newOffset = calculations.offset
       var newDistance = calculations.distance;
       if (newPosition < 0) {
         newDistance *= -1;
+        $item.css("background-position","left bottom");
       }
-
+      if (newPosition > 0) {
+        $item.css("background-position","right bottom");
+      }
       if (options.orientation == 'horizontal') {
         var center = data.containerWidth / 2;
         var newLeft = center + newDistance - (newWidth / 2);
@@ -488,7 +461,6 @@ import jQuery from 'jquery';
      */
     $(this).find('div').bind("click", function () {
       var itemPosition = $(this).data().currentPosition;
-
       if (options.imageNav == false) {
         return;
       }
@@ -648,12 +620,12 @@ import jQuery from 'jquery';
   $.fn.waterwheelCarousel.defaults = {
     // number tweeks to change apperance
     startingItem:               1,   // item to place in the center of the carousel. Set to 0 for auto
-    separation:                 175, // distance between items in carousel
-    separationMultiplier:       0.6, // multipled by separation distance to increase/decrease distance for each additional item
+    separation:                 110, // distance between items in carousel
+    separationMultiplier:       1, // multipled by separation distance to increase/decrease distance for each additional item
     horizonOffset:              0,   // offset each item from the "horizon" by this amount (causes arching)
     horizonOffsetMultiplier:    1,   // multipled by horizon offset to increase/decrease offset for each additional item
-    sizeMultiplier:             0.7, // determines how drastically the size of each item changes
-    opacityMultiplier:          0.8, // determines how drastically the opacity of each item changes
+    sizeMultiplier:             1, // determines how drastically the size of each item changes
+    opacityMultiplier:          1,   // determines how drastically the opacity of each item changes
     horizon:                    0,   // how "far in" the horizontal/vertical horizon should be set from the container wall. 0 for auto
     flankingItems:              3,   // the number of items visible on either side of the center
 
