@@ -33,8 +33,9 @@ img.App-logo {
   background:#007fbd;
   color:#fff;
   cursor: pointer;
-  padding:5px 25px;
-  height:100px;
+  padding:5px 10px;
+  height: 80px;
+  width: 100px;
   padding-bottom:15px;
   box-sizing: border-box;
   text-align: center;
@@ -227,7 +228,7 @@ div.icon {
 
 @media screen and (min-width: 1266px) and (max-width: 1400px)  {
   .detailSection {
-    top: 25%;
+    top: 30%;
   }
   
   .details {
