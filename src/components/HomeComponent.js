@@ -45,8 +45,7 @@ class HomeComponent extends React.Component {
 
   componentDidMount(){
     var carousel = $("#carousel").waterwheelCarousel({
-      flankingItems: 3,
-      orientation: ((window.innerWidth > 1300) ? 'horizontal' : 'vertical'), 
+      flankingItems: 3,      
       movingToCenter: function ($item) {
         $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
       },
