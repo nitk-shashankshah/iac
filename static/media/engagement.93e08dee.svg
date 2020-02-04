@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="57" viewBox="0 0 63 57">
+  <defs>
+    <clipPath id="clip-iPhone_X_XS_11_Pro_1">
+      <rect width="63" height="57"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_11_Pro_1" data-name="iPhone X/XS/11 Pro – 1" clip-path="url(#clip-iPhone_X_XS_11_Pro_1)">
+    <rect width="63" height="57" fill="#fff"/>
+    <g id="Group_2128" data-name="Group 2128" transform="translate(-64.767 -724.396)">
+      <path id="Path_4535" data-name="Path 4535" d="M110.322,767.512a3.089,3.089,0,0,1-3.094,3.082H83.862a3.087,3.087,0,0,1-3.1-3.082V738.48a3.086,3.086,0,0,1,3.1-3.084h23.366a3.088,3.088,0,0,1,3.094,3.084Z" transform="translate(0)" fill="#f0ab00"/>
+      <path id="Path_4536" data-name="Path 4536" d="M106.156,766.44H84.331V738.95h21.824V766.44Z" transform="translate(0.3 0.299)" fill="#fff"/>
+      <path id="Path_4537" data-name="Path 4537" d="M88.209,742.561a1.352,1.352,0,1,1-1.352-1.349A1.352,1.352,0,0,1,88.209,742.561Z" transform="translate(0.398 0.489)" fill="#666"/>
+      <rect id="Rectangle_2941" data-name="Rectangle 2941" width="14.687" height="1.541" transform="translate(90.502 742.281)" fill="#666"/>
+      <path id="Path_4538" data-name="Path 4538" d="M88.209,747.186a1.352,1.352,0,1,1-1.352-1.349A1.352,1.352,0,0,1,88.209,747.186Z" transform="translate(0.398 0.878)" fill="#666"/>
+      <rect id="Rectangle_2942" data-name="Rectangle 2942" width="14.687" height="1.541" transform="translate(90.502 747.293)" fill="#666"/>
+      <path id="Path_4539" data-name="Path 4539" d="M88.209,751.808a1.352,1.352,0,1,1-1.352-1.346A1.354,1.354,0,0,1,88.209,751.808Z" transform="translate(0.398 1.267)" fill="#666"/>
+      <rect id="Rectangle_2943" data-name="Rectangle 2943" width="14.687" height="1.546" transform="translate(90.502 752.305)" fill="#666"/>
+      <path id="Path_4540" data-name="Path 4540" d="M112.324,763.33H94.84L86.556,758.8l8.284-4.72h17.484Z" transform="translate(0.487 1.571)" fill="#666"/>
+      <path id="Path_4541" data-name="Path 4541" d="M89.631,760.62l4.948,2.71v-9.253L89.631,756.9Z" transform="translate(0.745 1.571)"/>
+      <path id="Path_4542" data-name="Path 4542" d="M94.389,763.01l-4.6-2.515v-3.517l4.6-2.621v8.654Z" transform="translate(0.759 1.594)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

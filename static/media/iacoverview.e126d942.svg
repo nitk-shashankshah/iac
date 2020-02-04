@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="57" viewBox="0 0 63 57">
+  <defs>
+    <clipPath id="clip-iPhone_X_XS_11_Pro_1">
+      <rect width="63" height="57"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_11_Pro_1" data-name="iPhone X/XS/11 Pro – 1" clip-path="url(#clip-iPhone_X_XS_11_Pro_1)">
+    <rect width="63" height="57" fill="#fff"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(-7.211 -140.179)">
+      <path id="Path_4516" data-name="Path 4516" d="M57.944,155.96H19.211l19.368-6.781,19.365,6.781Z" transform="translate(0)" fill="#666" fill-rule="evenodd"/>
+      <path id="Path_4517" data-name="Path 4517" d="M21.194,155.148v19.826l16.988-5.951,16.99,5.951V155.148Zm0,31.788H34.246v-8.16H42.12v8.16H55.172V176.659H21.194Z" transform="translate(0.396 1.191)" fill="#f0ab00" fill-rule="evenodd"/>
+      <g id="Group_2120" data-name="Group 2120" transform="translate(24.038 177.933)">
+        <g id="Group_2118" data-name="Group 2118">
+          <rect id="Rectangle_2920" data-name="Rectangle 2920" width="1.599" height="8.77" transform="translate(0.405 0.713)" fill="#fff"/>
+          <path id="Path_4518" data-name="Path 4518" d="M23.661,173.6h1.552c.236,0,.428-.1.428-.229s-.192-.224-.428-.224H23.661c-.232,0-.426.1-.426.224S23.429,173.6,23.661,173.6Z" transform="translate(-23.235 -173.15)" fill="#fff" fill-rule="evenodd"/>
+          <path id="Path_4519" data-name="Path 4519" d="M25.213,181.27H23.661c-.232,0-.426.1-.426.228s.194.225.426.225h1.552c.236,0,.428-.1.428-.225S25.449,181.27,25.213,181.27Z" transform="translate(-23.235 -171.53)" fill="#fff" fill-rule="evenodd"/>
+        </g>
+        <g id="Group_2119" data-name="Group 2119" transform="translate(26.675)">
+          <rect id="Rectangle_2921" data-name="Rectangle 2921" width="1.598" height="8.77" transform="translate(0.404 0.713)" fill="#fff"/>
+          <path id="Path_4520" data-name="Path 4520" d="M45.9,173.6h1.553c.234,0,.427-.1.427-.229s-.193-.224-.427-.224H45.9c-.234,0-.426.1-.426.224S45.665,173.6,45.9,173.6Z" transform="translate(-45.473 -173.15)" fill="#fff" fill-rule="evenodd"/>
+          <path id="Path_4521" data-name="Path 4521" d="M47.452,181.27H45.9c-.234,0-.426.1-.426.228s.192.225.426.225h1.553c.234,0,.427-.1.427-.225S47.686,181.27,47.452,181.27Z" transform="translate(-45.473 -171.53)" fill="#fff" fill-rule="evenodd"/>
+        </g>
+      </g>
+      <g id="Group_2124" data-name="Group 2124" transform="translate(25.326 158.316)">
+        <g id="Group_2121" data-name="Group 2121">
+          <rect id="Rectangle_2922" data-name="Rectangle 2922" width="3.398" height="3.397" fill="#fff"/>
+          <rect id="Rectangle_2923" data-name="Rectangle 2923" width="3.396" height="3.397" transform="translate(5.779)" fill="#fff"/>
+          <rect id="Rectangle_2924" data-name="Rectangle 2924" width="3.397" height="3.397" transform="translate(11.554)" fill="#fff"/>
+          <rect id="Rectangle_2925" data-name="Rectangle 2925" width="3.398" height="3.397" transform="translate(17.33)" fill="#fff"/>
+          <rect id="Rectangle_2926" data-name="Rectangle 2926" width="3.398" height="3.397" transform="translate(23.105)" fill="#fff"/>
+        </g>
+        <g id="Group_2122" data-name="Group 2122" transform="translate(0 5.775)">
+          <rect id="Rectangle_2927" data-name="Rectangle 2927" width="3.398" height="3.398" fill="#fff"/>
+          <rect id="Rectangle_2928" data-name="Rectangle 2928" width="3.396" height="3.398" transform="translate(5.779)" fill="#fff"/>
+          <rect id="Rectangle_2929" data-name="Rectangle 2929" width="3.397" height="3.398" transform="translate(11.554)" fill="#fff"/>
+          <rect id="Rectangle_2930" data-name="Rectangle 2930" width="3.398" height="3.398" transform="translate(17.33)" fill="#fff"/>
+          <rect id="Rectangle_2931" data-name="Rectangle 2931" width="3.398" height="3.398" transform="translate(23.105)" fill="#fff"/>
+        </g>
+        <g id="Group_2123" data-name="Group 2123" transform="translate(0 11.552)">
+          <rect id="Rectangle_2932" data-name="Rectangle 2932" width="3.398" height="3.397" fill="#fff"/>
+          <rect id="Rectangle_2933" data-name="Rectangle 2933" width="3.396" height="3.397" transform="translate(5.779)" fill="#fff"/>
+          <rect id="Rectangle_2934" data-name="Rectangle 2934" width="3.397" height="3.397" transform="translate(11.554)" fill="#fff"/>
+          <rect id="Rectangle_2935" data-name="Rectangle 2935" width="3.398" height="3.397" transform="translate(17.33)" fill="#fff"/>
+          <rect id="Rectangle_2936" data-name="Rectangle 2936" width="3.398" height="3.397" transform="translate(23.105)" fill="#fff"/>
+        </g>
+      </g>
+      <path id="Path_4522" data-name="Path 4522" d="M56.707,173.657H20.1l18.3-6.41,18.307,6.41Z" transform="translate(0.176 3.605)" fill="#666" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

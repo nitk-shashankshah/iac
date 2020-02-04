@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="57" viewBox="0 0 63 57">
+  <defs>
+    <clipPath id="clip-iPhone_X_XS_11_Pro_1">
+      <rect width="63" height="57"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_11_Pro_1" data-name="iPhone X/XS/11 Pro – 1" clip-path="url(#clip-iPhone_X_XS_11_Pro_1)">
+    <rect width="63" height="57" fill="#fff"/>
+    <g id="Group_2127" data-name="Group 2127" transform="translate(-257.643 -8.061)">
+      <path id="Path_4530" data-name="Path 4530" d="M304.58,24.548h-.1v8.763H272.247V51.345a3.775,3.775,0,0,0,3.783,3.769h28.55a3.775,3.775,0,0,0,3.78-3.769V28.321A3.779,3.779,0,0,0,304.58,24.548Z" transform="translate(0.283 1.145)" fill="#0382be"/>
+      <path id="Path_4531" data-name="Path 4531" d="M303.776,23.746h-.1v8.768H271.446V50.543a3.773,3.773,0,0,0,3.779,3.772h28.551a3.776,3.776,0,0,0,3.779-3.772V27.519A3.776,3.776,0,0,0,303.776,23.746Z" transform="translate(0.142 1.003)" fill="#fff"/>
+      <path id="Path_4532" data-name="Path 4532" d="M302.973,22.945h-1.961v3.678a3.263,3.263,0,0,1-6.526,0V22.945H282.91v3.678a3.262,3.262,0,0,1-6.525,0V22.945h-1.961a3.776,3.776,0,0,0-3.781,3.773V49.742a3.776,3.776,0,0,0,3.781,3.772h28.549a3.778,3.778,0,0,0,3.781-3.772V26.718A3.779,3.779,0,0,0,302.973,22.945Z" transform="translate(0 0.862)" fill="#666"/>
+      <path id="Path_4533" data-name="Path 4533" d="M278.582,29.765a2.365,2.365,0,0,1-2.365-2.358V20.416a2.365,2.365,0,0,1,4.73,0v6.992a2.367,2.367,0,0,1-2.366,2.358Z" transform="translate(0.983 0)" fill="#f0ab00"/>
+      <path id="Path_4534" data-name="Path 4534" d="M294.047,29.765a2.366,2.366,0,0,1-2.368-2.358V20.416a2.365,2.365,0,0,1,4.73,0v6.992a2.364,2.364,0,0,1-2.362,2.358Z" transform="translate(3.711 0)" fill="#f0ab00"/>
+      <rect id="Rectangle_2937" data-name="Rectangle 2937" width="30.24" height="16.972" transform="translate(273.567 34.578)" fill="#fff"/>
+      <rect id="Rectangle_2938" data-name="Rectangle 2938" width="27.85" height="2.238" rx="0.951" transform="translate(274.172 36.5)" fill="#f0ab00"/>
+      <rect id="Rectangle_2939" data-name="Rectangle 2939" width="27.85" height="2.238" rx="0.951" transform="translate(274.172 40.976)" fill="#f0ab00"/>
+      <rect id="Rectangle_2940" data-name="Rectangle 2940" width="11.435" height="2.238" rx="0.951" transform="translate(290.586 46.123)" fill="#f0ab00"/>
+    </g>
+  </g>
+</svg>
