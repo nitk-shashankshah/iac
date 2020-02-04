@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/iac/static/css/main.718fc71b.chunk.css",
+    "main.css": "/iac/static/css/main.d6210486.chunk.css",
     "main.js": "/iac/static/js/main.c6e3d9b8.chunk.js",
     "main.js.map": "/iac/static/js/main.c6e3d9b8.chunk.js.map",
     "runtime-main.js": "/iac/static/js/runtime-main.fddfc49c.js",
@@ -8,9 +8,9 @@
     "static/js/2.add7d4c0.chunk.js": "/iac/static/js/2.add7d4c0.chunk.js",
     "static/js/2.add7d4c0.chunk.js.map": "/iac/static/js/2.add7d4c0.chunk.js.map",
     "index.html": "/iac/index.html",
-    "precache-manifest.f38343b3f91a080375da4e2459c3b742.js": "/iac/precache-manifest.f38343b3f91a080375da4e2459c3b742.js",
+    "precache-manifest.b9b9b24365b0341513a0a5eb76ba4f2e.js": "/iac/precache-manifest.b9b9b24365b0341513a0a5eb76ba4f2e.js",
     "service-worker.js": "/iac/service-worker.js",
-    "static/css/main.718fc71b.chunk.css.map": "/iac/static/css/main.718fc71b.chunk.css.map",
+    "static/css/main.d6210486.chunk.css.map": "/iac/static/css/main.d6210486.chunk.css.map",
     "static/js/2.add7d4c0.chunk.js.LICENSE": "/iac/static/js/2.add7d4c0.chunk.js.LICENSE",
     "static/media/index.css": "/iac/static/media/Roboto-Regular.5673da52.ttf",
     "static/media/App.css": "/iac/static/media/background.7eb74f41.jpg",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.fddfc49c.js",
     "static/js/2.add7d4c0.chunk.js",
-    "static/css/main.718fc71b.chunk.css",
+    "static/css/main.d6210486.chunk.css",
     "static/js/main.c6e3d9b8.chunk.js"
   ]
 }
