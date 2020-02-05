@@ -296,7 +296,48 @@
   .submenu ul li a{
     color:#7b7b7b;
     text-transform: none;
-    font-size:17px;
+    font-size:17px;    
+    text-decoration: none;
+  }
+
+  
+  #carousel {
+    width:900px;
+    height:400px;
+    margin:-20px auto;
+    float:left;
+  }
+  
+  #prev{
+    display:block;
+    width:35px;
+    height:100px;
+    background:url(../assets/images/arrowleft.png) no-repeat left top;
+    margin-top:130px;
+  }
+  
+  #next{
+    display:block;
+    width:35px;
+    height:100px;  
+    background:url(../assets/images/arrowright.png) no-repeat left top;  
+    margin-top:130px;
+  }
+  
+  #carousel div p {
+    background: rgb(255, 255, 255, 0.8);
+  }
+  
+  .carousel-center p{
+    background:none!important;
+    transition: 0.2s ease-in-out;
+  }
+  .slider{
+    display: flex;
+    flex-direction: horizontal;  
+    justify-content: space-between;
+    width:1100px;
+    margin:0px auto;
   }
 
   @media screen and (max-width: 1235px) {
@@ -313,7 +354,7 @@
      padding: 0px;
      top:72px;
    }
-   
+
    .menu > div.actionIcon img{
       padding-left:20px;
    }
@@ -374,11 +415,48 @@
      letter-spacing: 1px;
    }
    .submenu ul li a{
-      color:#3c3c3c;
+      color:#fff;
    }  
    .elanco-logo {
      padding:20px 20px;
    }
+   
+   .submenu ul li:nth-child(2){
+     color:#fff;
+   }
+
+   #carousel {
+    width:400px;
+    height:1200px;
+    margin: -135px auto;
+    display:block;
+   }
+  
+   #prev{
+    display:block;
+    width:35px;
+    margin:400px auto;
+    height:100px;
+    background:url(../assets/images/arrowleft.png) no-repeat left top;
+   }
+  
+   #next{
+    display:block;
+    margin: 0px auto;
+    width:35px;
+    height:100px;
+    margin:400px auto;  
+    background:url(../assets/images/arrowright.png) no-repeat left top;
+   }
+
+   .slider{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    width:100%;
+    margin:0px auto;
+   }
+
   }
   
   .slideshow{
@@ -399,41 +477,3 @@
     text-align: center;
   }
   
-  #carousel {
-    width:900px;
-    height:400px;
-    margin:-20px auto;
-    float:left;
-  }
-  
-  #prev{
-    display:block;
-    width:35px;
-    height:100px;
-    background:url(../assets/images/arrowleft.png) no-repeat left top;
-    margin-top:130px;
-  }
-  
-  #next{
-    display:block;
-    width:35px;
-    height:100px;  
-    background:url(../assets/images/arrowright.png) no-repeat left top;  
-    margin-top:130px;
-  }
-  
-  #carousel div p {
-    background: rgb(255, 255, 255, 0.8);
-  }
-  
-  .carousel-center p{
-    background:none!important;
-    transition: 0.2s ease-in-out;
-  }
-  .slider{
-    display: flex;
-    flex-direction: horizontal;  
-    justify-content: space-between;
-    width:1100px;
-    margin:0px auto;
-  }

@@ -80,14 +80,15 @@ class HomeComponent extends React.Component {
       this.setState({openMenu: this.state.openMenu ? 0 : x});   
   }
   menuMouseOver(x) {
-    if (!this.state.isResponsive)
-      this.setState({openMenu: x});    
+    //if (!this.state.isResponsive)
+    this.setState({openMenu: x});    
   }
   subMenuMouseOver(c) {
     this.setState({openMenu: c});
   }
   subMenuMouseOut() {
-    this.setState({openMenu: 0});
+    if (!this.state.isResponsive)
+      this.setState({openMenu: 0});
   }
   rollMenu() {
     this.setState({isResponsive: !this.state.isResponsive});
