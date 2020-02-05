@@ -20,10 +20,10 @@ import eks from '../assets/icons/eks.svg';
 import newsarticle from '../assets/icons/newsarticle.svg';
 import globalfinance from '../assets/icons/globalFinance.svg';
 import globalcommercialops from '../assets/icons/globalcommercialops.svg';
-import globalmarketing from '../assets/icons/globalmarketing.svg';
+import globalmarketing from '../assets/icons/globalMarketing.svg';
 import it from '../assets/icons/it.svg';
 import manufacturing from '../assets/icons/manufacturing.svg';
-import rnd from '../assets/icons/RnD.svg';
+import rnd from '../assets/icons/rnd.svg';
 
 import './home.css';
 import $ from 'jquery';
@@ -168,7 +168,7 @@ class HomeComponent extends React.Component {
               Capabilities
             </span>
           <div 
-            className={this.state.openMenu === 2 ? "submenu homeMenu" : "submenu"}
+            className={this.state.openMenu === 2 ? "submenu homeMenu capabilityMenu" : "submenu"}
             onMouseOver={() => this.subMenuMouseOver(2)}
             onMouseOut={this.subMenuMouseOut}
           >
@@ -178,7 +178,7 @@ class HomeComponent extends React.Component {
             <li className="subheading">
               Global Regulatory
               <ul>
-                <li><a href="/test">CMC</a></li>                
+                <li><a href="/test">CMC</a></li>
                 <li><a href="/test">Safety</a></li>                
                 <li><a href="/test">Quality</a></li>
               </ul>
@@ -206,9 +206,8 @@ class HomeComponent extends React.Component {
             <li><a href="/test">Descriptive Analytics</a></li>
             <li><a href="/test">Advanced Analytics</a></li>
             <li><a href="/test">Technical Academic & Consumer Service(TACS)</a></li>
-          </ul>
-          <ul>
-            <li><img src={eks} alt="Elanco Knowledge Solutions"/></li>
+         
+            <li class="subListing"><img src={eks} alt="Elanco Knowledge Solutions"/></li>
             <li><b>Elanco Knowledge Solutions</b></li>
             <li><a href="/test">Innovation</a></li>
             <li><a href="/test">Operations</a></li>
@@ -218,9 +217,9 @@ class HomeComponent extends React.Component {
             <li><b>Global Finance</b></li>
             <li><a href="/test">US Finance</a></li>
             <li><a href="/test">Intl Finance</a></li>
-          </ul>
-          <ul>
-            <li><img src={it} alt="Information Technology"/></li>
+            <li><br/><br/></li>
+            
+            <li class="subListing"><img src={it} alt="Information Technology"/></li>
             <li><b>Information Technology</b></li>
             <li><a href="/test">Data Engineering</a></li>
             <li><a href="/test">UI/UX</a></li>

@@ -1,31 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="43" viewBox="0 0 49 43">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<image x="6" y="4" width="36" height="34" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAiCAMAAAAAh4u3AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAdVBMVEX///+CgoKMjIyLi4uysrJ4eHjFxcVpaWlvb29sbGxvb290dHTi4uLY2Njs7Oz878/wsA/ytSDzvz/xtybyvTr31X/xshjxsxr65a+fn5/Z2dnd0LD42o/0wEDwrw/vqwLwsRP5359mZmZlZWXwqwDwqgAAAACYCaVNAAAAInRSTlMAz7/AgOBg+u/08OcwQCAw8N/A2cWA5+VQnz9jcL/w/exgrbJxzwAAAAFiS0dEJloImLUAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAHdElNRQfkAgUQBCxGjVrxAAAAlUlEQVQ4y+3TWw7CIBCFYdoBL1WsovVWtTrS/W9RjQnFGSezAP0fyZdweMAUqFYaBKvk0KA1SvBGthQbJQTjidAUBoQOvla5HAnD4I9+CUnNMnSXwgHNvdgiobx6uarJMI7CetOoqNnu9hwdjp+1LTkonkivMl775db6dPPpzCLbXq+KrMDQpaOmv3IUe1Lk6BZYadMDcSwvAHFACEYAAAAASUVORK5CYII="/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="67" viewBox="0 0 73 67">
+  <defs>
+    <clipPath id="clip-iPhone_X_XS_11_Pro_1">
+      <rect width="73" height="67"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_11_Pro_1" data-name="iPhone X/XS/11 Pro – 1" clip-path="url(#clip-iPhone_X_XS_11_Pro_1)">
+    <rect width="73" height="67" fill="#fff"/>
+    <g id="Group_2478" data-name="Group 2478" transform="translate(12.949 -396.336)">
+      <path id="Path_4803" data-name="Path 4803" d="M6.832,441.744H41.17a.781.781,0,0,0,.781-.781V414.115a.78.78,0,0,0-.781-.779H6.832a.78.78,0,0,0-.781.779v26.848A.781.781,0,0,0,6.832,441.744Zm.78-26.848H40.39v25.286H7.612Z" fill="#666"/>
+      <path id="Path_4804" data-name="Path 4804" d="M37.044,416.56H10.958a.782.782,0,0,0-.781.782v17.586a.78.78,0,0,0,.781.779H37.044a.78.78,0,0,0,.781-.779V417.342A.782.782,0,0,0,37.044,416.56Zm-.78,17.586H11.738V418.123H36.264Z" fill="#666"/>
+      <path id="Path_4805" data-name="Path 4805" d="M24,436.32A1.678,1.678,0,1,0,25.679,438,1.68,1.68,0,0,0,24,436.32Zm0,2.418a.741.741,0,1,1,.742-.74A.741.741,0,0,1,24,438.738Z" fill="#f0ab00"/>
+      <path id="Path_4806" data-name="Path 4806" d="M33.017,446.969a.781.781,0,0,0,.78-.782v-2.726a.781.781,0,0,0-.78-.781H14.986a.781.781,0,0,0-.781.781v2.726a.782.782,0,0,0,.781.782ZM15.766,444.24h16.47v1.166H15.766Z" fill="#f0ab00"/>
+      <path id="Path_4807" data-name="Path 4807" d="M33.017,446.385c.431,0,.78-.175.78-.391v-1.363c0-.216-.349-.391-.78-.391H14.986c-.431,0-.781.175-.781.391v1.363c0,.216.35.391.781.391ZM15.766,445.02h16.47v.583H15.766Z" fill="#f0ab00"/>
+      <path id="Path_4808" data-name="Path 4808" d="M24,437.158a.839.839,0,1,0,.839.839A.839.839,0,0,0,24,437.158Zm0,1.209a.37.37,0,1,1,.371-.37A.371.371,0,0,1,24,438.367Z" fill="#f0ab00"/>
+      <rect id="Rectangle_3160" data-name="Rectangle 3160" width="17.719" height="1.625" rx="0.812" transform="translate(15.438 444.375)" fill="#f0ab00"/>
+      <rect id="Rectangle_3161" data-name="Rectangle 3161" width="1.016" height="1.016" rx="0.508" transform="translate(23.406 437.406)" fill="#f0ab00"/>
+      <path id="Path_4809" data-name="Path 4809" d="M35.943,417.625H11.74a.71.71,0,0,0-.724.7v15.653a.709.709,0,0,0,.724.694h24.2a.71.71,0,0,0,.724-.694V418.32A.71.71,0,0,0,35.943,417.625Zm-.725,15.653H12.464V419.016H35.218Z" fill="#666"/>
+    </g>
+  </g>
 </svg>

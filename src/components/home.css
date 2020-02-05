@@ -9,7 +9,10 @@
     margin-top:10px;
     float:left;
   }
-  
+  .subListing{
+    padding:0px!important;
+    padding-top:10px!important;
+   }
   .elanco-logo {
     pointer-events: none;
     width: 120px;
@@ -58,14 +61,13 @@
     cursor: pointer;
     height: 80px;
     width: 110px;
-    box-sizing: border-box;
+    padding:0px 10px;
     text-align: center;
     position:relative;
     font-size:16px;
     top:50%;
     transform: translateY(-50%);
   }
-  
   .chatBtn p{
     padding:0px;
     margin:0px 0px;
@@ -278,10 +280,33 @@
     display:none;
   }
   .homeMenu{
-    transform: translateX(-25%);
     overflow:hidden;
     display:flex;
+    transform: translateX(-25%);
   }
+  .capabilityMenu{
+    left:50%;
+    transform: translateX(-50%);
+    width:1235px;
+    position: absolute;
+  }
+
+  .capabilityMenu ul:first-child{
+    width:250px;
+  }
+  
+  .capabilityMenu ul:nth-child(2){
+    width:180px;
+  }
+
+  .capabilityMenu ul:nth-child(3){
+    width:250px;
+  }
+
+  .capabilityMenu ul:nth-child(4){
+    width:220px;
+  }
+
   .submenu ul{
     list-style-type:none;
     padding:10px 20px;
@@ -427,6 +452,7 @@
    .submenu ul li:nth-child(2){
      color:#fff;
    }
+
 
    #carousel {
     width:400px;
