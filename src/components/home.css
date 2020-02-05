@@ -292,15 +292,18 @@
       color:#3c3c3c;
       padding:8px;
       font-size: 21px;
+      font-weight: bold;
+  }
+  .submenu ul > li.subheading{
+    font-size: 18px!important;
   }
   .submenu ul li a{
     color:#7b7b7b;
     text-transform: none;
     font-size:17px;    
     text-decoration: none;
+    font-weight: normal;
   }
-
-  
   #carousel {
     width:900px;
     height:400px;

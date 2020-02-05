@@ -12,10 +12,19 @@ import login from '../assets/images/login.png';
 import search from '../assets/images/search.png';
 import chat from '../assets/images/chat.png';
 import locate from '../assets/images/location.png';
-import iacoverview from '../assets/images/iacoverview.svg';
-import event from '../assets/images/event.svg';
-import engagement from '../assets/images/engagement.svg';
-import newsarticle from '../assets/images/newsarticle.svg';
+
+import iacoverview from '../assets/icons/iacoverview.svg';
+import event from '../assets/icons/event.svg';
+import engagement from '../assets/icons/engagement.svg';
+import eks from '../assets/icons/eks.svg';
+import newsarticle from '../assets/icons/newsarticle.svg';
+import globalfinance from '../assets/icons/globalFinance.svg';
+import globalcommercialops from '../assets/icons/globalcommercialops.svg';
+import globalmarketing from '../assets/icons/globalmarketing.svg';
+import it from '../assets/icons/it.svg';
+import manufacturing from '../assets/icons/manufacturing.svg';
+import rnd from '../assets/icons/RnD.svg';
+
 import './home.css';
 import $ from 'jquery';
 import '../jquery.waterwheelCarousel.js';
@@ -80,7 +89,6 @@ class HomeComponent extends React.Component {
       this.setState({openMenu: this.state.openMenu ? 0 : x});   
   }
   menuMouseOver(x) {
-    //if (!this.state.isResponsive)
     this.setState({openMenu: x});    
   }
   subMenuMouseOver(c) {
@@ -100,23 +108,132 @@ class HomeComponent extends React.Component {
       <header className="header">
           <img className="App-logo" src={iaclogo} alt="logo" />
           <div className={this.state.isResponsive ? "responsive menu" : "menu"}>
-          <div class="item"><span href="home" className={this.state.openMenu === 1 ? "hoverClass" : ""} onMouseOver={() => this.menuMouseOver(1)} onClick={() => this.menuMouseClick(1)}>About Us</span>
-          <div className={this.state.openMenu === 1 ? "submenu homeMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(1)} onMouseOut={this.subMenuMouseOut}>
-          <ul><li><img src={iacoverview} alt="IAC Overview"/></li><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
-          <ul><li><img src={newsarticle} alt="News Article"/></li><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
-          <ul><li><img src={event} alt="News Article"/></li><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
-          <ul><li><img src={engagement} alt="News Article"/></li><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
+          <div class="item">
+            <span 
+              href="home" 
+              className={this.state.openMenu === 1 ? "hoverClass" : ""}
+              onMouseOver={() => this.menuMouseOver(1)}
+              onClick={() => this.menuMouseClick(1)}>
+              About Us
+            </span>
+          <div
+            className={this.state.openMenu === 1 ? "submenu homeMenu" : "submenu"}
+            onMouseOver={() => this.subMenuMouseOver(1)}
+            onMouseOut={this.subMenuMouseOut}
+          >
+          <ul>
+            <li><img src={iacoverview} alt="IAC Overview"/></li>
+            <li><b>IAC Overview</b></li>
+            <li><a href="/test">History</a></li>
+            <li><a href="/test">Why IAC</a></li>
+            <li><a href="/test">Global Capability Center</a></li>
+            <li><a href="/test">Leadership</a></li>
+            <li><a href="/test">Mission</a></li>
+            <li><a href="/test">Governance</a></li>
+            <li><a href="/test">Diversity and Inclusion</a></li>
+            <li><a href="/test">CSR</a></li>
+            <li><a href="/test">Innovation</a></li>
+            <li><a href="/test">Success Stories</a></li>
+            <li><a href="/test">FAQs</a></li>
+          </ul>
+          <ul>
+            <li><img src={newsarticle} alt="News Article"/></li>
+            <li><b>News Articles</b></li>
+            <li><a href="/test">Top Stories</a></li>
+            <li><a href="/test">Newsletters</a></li>
+            <li><a href="/test">eMagaines</a></li>
+          </ul>
+          <ul>
+            <li><img src={event} alt="News Article"/></li>
+            <li><b>Events</b></li><li><a href="/test">GDOP</a></li>
+            <li><a href="/test">Town Hall</a></li>
+            <li><a href="/test">Leadership visits</a></li>
+          </ul>
+          <ul>
+            <li><img src={engagement} alt="News Article"/></li>
+            <li><b>Engagements</b></li>
+            <li><a href="/test">Employee Resource Groups</a></li>
+            <li><a href="/test">Testimonials</a></li>
+            <li><a href="/test">Business Integration</a></li>
+          </ul>
           </div>  
           </div>
-          <div class="item"><span href="about" className={this.state.openMenu === 2 ? "hoverClass" : ""} onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(2)} onClick={() => this.menuMouseClick(2)}>Capabilities</span>
-          <div className={this.state.openMenu === 2 ? "submenu homeMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(2)} onMouseOut={this.subMenuMouseOut}>
-          <ul><li><img src={iacoverview} alt="IAC Overview"/></li><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
-          <ul><li><img src={newsarticle} alt="News Article"/></li><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
-          <ul><li><img src={event} alt="News Article"/></li><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
-          <ul><li><img src={engagement} alt="News Article"/></li><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
-          </div>    
+          <div class="item">
+            <span
+              href="about"
+              className={this.state.openMenu === 2 ? "hoverClass" : ""}
+              onMouseOut={() => this.menuMouseOut()}
+              onMouseOver={() => this.menuMouseOver(2)}
+              onClick={() => this.menuMouseClick(2)}>
+              Capabilities
+            </span>
+          <div 
+            className={this.state.openMenu === 2 ? "submenu homeMenu" : "submenu"}
+            onMouseOver={() => this.subMenuMouseOver(2)}
+            onMouseOut={this.subMenuMouseOut}
+          >
+          <ul>
+            <li><img src={rnd} alt="Research and Development"/></li>
+            <li><b>Research and Development</b></li>
+            <li className="subheading">
+              Global Regulatory
+              <ul>
+                <li><a href="/test">CMC</a></li>                
+                <li><a href="/test">Safety</a></li>                
+                <li><a href="/test">Quality</a></li>
+              </ul>
+            </li>
+            <li className="subheading">
+              Global Operations
+              <ul>
+                <li><a href="/test">Document Management</a></li>                
+                <li><a href="/test">Biostatics and Data Management</a></li>                
+                <li><a href="/test">Project Management</a></li>
+              </ul>
+            </li>
+            <li className="subheading">Bioinformatics</li>
+          </ul>
+          <ul>
+            <li><img src={globalmarketing} alt="Global Marketing"/></li>
+            <li><b>Global Marketing</b></li>
+            <li><a href="/test">Marketing Analytics</a></li>
+            <li><a href="/test">Digital Marketing</a></li>
+            <li><a href="/test">Marketing Ops</a></li>
+          </ul>
+          <ul>
+            <li><img src={globalcommercialops} alt="Global Commercial Ops"/></li>
+            <li><b>Global Commercial Ops</b></li>
+            <li><a href="/test">Descriptive Analytics</a></li>
+            <li><a href="/test">Advanced Analytics</a></li>
+            <li><a href="/test">Technical Academic & Consumer Service(TACS)</a></li>
+          </ul>
+          <ul>
+            <li><img src={eks} alt="Elanco Knowledge Solutions"/></li>
+            <li><b>Elanco Knowledge Solutions</b></li>
+            <li><a href="/test">Innovation</a></li>
+            <li><a href="/test">Operations</a></li>
+          </ul>
+          <ul>
+            <li><img src={globalfinance} alt="Global Finance"/></li>
+            <li><b>Global Finance</b></li>
+            <li><a href="/test">US Finance</a></li>
+            <li><a href="/test">Intl Finance</a></li>
+          </ul>
+          <ul>
+            <li><img src={it} alt="Information Technology"/></li>
+            <li><b>Information Technology</b></li>
+            <li><a href="/test">Data Engineering</a></li>
+            <li><a href="/test">UI/UX</a></li>
+          </ul>
+          <ul>
+            <li><img src={manufacturing} alt="Manufacturing"/></li>
+            <li><b>Manufacturing</b></li>
+            <li><a href="/test">Supply Chain</a></li>
+          </ul>
           </div>
-          <div class="item"><span href="governance" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(3)} onClick={() => this.menuMouseClick(3)}>Governance</span>
+          </div>
+          <div class="item">
+            <span href="governance" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(3)} onClick={() => this.menuMouseClick(3)}>Governance</span>
           {/*<div className={this.state.openMenu === 3 ? "submenu governanceMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(3)} onMouseOut={this.subMenuMouseOut}>
           <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
           <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
