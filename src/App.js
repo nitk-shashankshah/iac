@@ -21,7 +21,10 @@ function App() {
           </Route>
           <Route path="/about">
             <AboutComponent />
-          </Route>          
+          </Route> 
+          <Route path="/">
+            <HomeComponent />
+          </Route>         
         </Switch>
       </div>
     </Router>

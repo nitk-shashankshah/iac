@@ -24,9 +24,13 @@ import banner2 from '../assets/images/40.svg';
 import banner3 from '../assets/images/1400.svg';
 import banner4 from '../assets/images/1.5m.svg';
 
+import mission from '../assets/images/mission.svg';
+import csrimage from '../assets/images/csr.svg';
+
 import pic1 from '../assets/images/Mukta.jpg';
 import pic2 from '../assets/images/Sajeesh.jpg';
 import pic3 from '../assets/images/LKN.jpg';
+import diversity from '../assets/images/diversity.svg';
 
 import './css/home.css';
 import './css/about.css';
@@ -44,16 +48,21 @@ class AboutComponent extends React.Component {
     this.state = {
       isResponsive: false,
       openMenu: 0,
-      displaySearch: false
+      displaySearch: false,
+      activeLink:1
     };
     this.rollMenu = this.rollMenu.bind(this);
     this.menuMouseOver = this.menuMouseOver.bind(this);
     this.subMenuMouseOut = this.subMenuMouseOut.bind(this);    
     this.menuMouseOut = this.menuMouseOut.bind(this);
     this.showSearchbox = this.showSearchbox.bind(this);
+    this.setActiveLink = this.setActiveLink.bind(this);
   }
+  menuMouseOut(){
 
-  menuMouseOut() {
+  }
+  setActiveLink(x) {
+    this.setState({activeLink : x});
   }
 
   componentDidMount(){
@@ -248,17 +257,17 @@ class AboutComponent extends React.Component {
         <div class="content">
            <div class="navPanel">
            <ul>
-              <li><a href="#history" className="active">History</a></li>              
-              <li><a href="#whyIAC">Why IAC</a></li>
-              <li><a href="#globalCapabilityCenter">Global Capability Center</a></li>
-              <li><a href="#leadership">Leadership</a></li>
-              <li><a href="#mission">Mission</a></li>
-              <li><a href="#governance">Governance</a></li>
-              <li><a href="#diversity">Diversity & Inclusion</a></li>              
-              <li><a href="#csr">CSR</a></li>
-              <li><a href="#innovation">Innovation</a></li>
-              <li><a href="#successStories">Success Stories</a></li>
-              <li><a href="#faqa">FAQs</a></li>
+              <li><a href="#history" className={this.state.activeLink==1 ? "active": ""} onClick={() => this.setActiveLink(1)}>History</a></li>              
+              <li><a href="#whyIAC" className={this.state.activeLink==2 ? "active": ""} onClick={() => this.setActiveLink(2)}>Why IAC</a></li>
+              <li><a href="#globalCapabilityCenter" className={this.state.activeLink==3 ? "active": ""} onClick={() => this.setActiveLink(3)}>Global Capability Center</a></li>
+              <li><a href="#leadership" className={this.state.activeLink==4 ? "active": ""} onClick={() => this.setActiveLink(4)}>Leadership</a></li>
+              <li><a href="#mission" className={this.state.activeLink==5 ? "active": ""} onClick={() => this.setActiveLink(5)}>Mission</a></li>
+              <li><a href="#governance" className={this.state.activeLink==6 ? "active": ""} onClick={() => this.setActiveLink(6)}>Governance</a></li>
+              <li><a href="#diversity" className={this.state.activeLink==7 ? "active": ""} onClick={() => this.setActiveLink(7)}>Diversity & Inclusion</a></li>              
+              <li><a href="#csr" className={this.state.activeLink==8 ? "active": ""} onClick={() => this.setActiveLink(8)}>CSR</a></li>
+              <li><a href="#innovation" className={this.state.activeLink==9 ? "active": ""} onClick={() => this.setActiveLink(9)}>Innovation</a></li>
+              <li><a href="#successStories" className={this.state.activeLink==10 ? "active": ""} onClick={() => this.setActiveLink(10)}>Success Stories</a></li>
+              <li><a href="#faqa" className={this.state.activeLink==11 ? "active": ""} onClick={() => this.setActiveLink(11)}>FAQs</a></li>
            </ul>
            </div>
            <div class="contentPanel">
@@ -355,15 +364,15 @@ to 50% startups and biotech companies</p>
                  <h3>Leadership Team</h3>
                  <h3 class="topic" style={{"float":"left"}}>Site Leaders</h3>
                  <div class="row">
-                   <div class="leaderboard">
+                   <div class="leaderboard centerAlign">
                       <div class="picture"><img src={pic1} /></div>
-                      <div class="details">
+                      <div class="leaderDetails">
                          <div class="profile">
-                           Mukta Arora
-                           Managing Director, EIACI
-                           R&D Regulatory & Admin
+                         <span class="name">Mukta Arora</span><br/>
+                             Managing Director, EIACI<br/>
+                             R&D Regulatory & Admin
                          </div>
-                         <div class="knowMore">Know more about Mukta</div>
+                         <div class="knowMore"><a href="#about">Know more about Mukta...</a></div>
                       </div>   
                       <div style={{clear:"both"}} />                  
                    </div>
@@ -371,58 +380,169 @@ to 50% startups and biotech companies</p>
                  <div class="row">
                    <div class="leaderboard">
                    <div class="picture"><img src={pic2} /></div>
-                      <div class="details">
+                      <div class="leaderDetails">
                          <div class="profile">
-                           Mukta Arora
-                           Managing Director, EIACI
-                           R&D Regulatory & Admin
+                         <span class="name">Sajeesh Krishnan</span><br/>
+                           Director Business Integration
                          </div>
-                         <div class="knowMore">Know more about Mukta</div>
+                         <div class="knowMore"><a href="#about">Know more about Sajeesh...</a></div>
                       </div>        
                    </div>
                    <div class="leaderboard">
                    <div class="picture"><img src={pic3} /></div>
-                      <div class="details">
+                      <div class="leaderDetails">
                          <div class="profile">
-                           Mukta Arora
-                           Managing Director, EIACI
-                           R&D Regulatory & Admin
+                           <span class="name">Lakshminarayanan</span><br/>
+                           Director,Finance & HR-EIACI
                          </div>
-                         <div class="knowMore">Know more about Mukta</div>
+                         <div class="knowMore"><a href="#about">Know more about Lakshmi...</a></div>
                       </div>        
                    </div>
                  </div>
+
+
+                 <h3 class="topic" style={{"float":"left"}}>Functional Leaders</h3>
+                 <div class="row">
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div>
+                     <div style={{clear:"both"}} />  
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div>
+                   </div>
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />      
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div>
+                   </div>
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />      
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div>
+                   </div>
+                  </div>
+                  <div class="row">
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />     
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div> 
+                   </div>
+                   
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />     
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div> 
+                   </div>
+
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div>
+                     <div style={{clear:"both"}} />  
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div>     
+                   </div>
+                  </div>
+                  <div class="row">
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />     
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div> 
+                   </div>
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />      
+                     <div class="desc">
+                     <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div>
+                   </div>
+                   <div class="funcleaderboard">
+                     <div class="funcPicture"></div> 
+                     <div style={{clear:"both"}} />      
+                     <div class="desc">
+                           <span class="name">Name Surname</span><br/>
+                           Director,Finance & HR-EIACI<br/>
+                     <a href="/about">Learn More</a>
+                     </div>
+                   </div>
+                 </div>
+                 <div style={{clear:"both"}}></div>
                </div>
 
                
                <div class="topic" id="mission">
                  <h3>Mission</h3>
-                 <p>
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
+                 <p>                
+                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", fontWeight:"bold", lineHeight:"36px", fontSize:"24px", textAlign:"center"}}>
+                 Our mission is to enable Elanco’s IPP 
+strategy by building global capabilities, 
+fostering innovations and forging 
+external alliances</div>    
+                 <div style={{display:"table-cell", width:"40%", verticalAlign:"middle"}}> 
+                   <img src={mission} width="100%" />
+                 </div>
+                 <div style={{clear:"both"}}></div>
                  </p>
                </div>
 
                               
                <div class="topic" id="diversity">
                  <h3>Diversity 7 Inclusion</h3>
-                 <p>
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
-                 Lorem Ipsum sdsdf sdfsdfsdf sdfsdfsdf dsdfwfsdf sdfsdfdwf<br />
+                 <p>          
+                 <div style={{display:"table-cell", width:"40%", verticalAlign:"middle"}}> 
+                   <img src={diversity} width="100%" />
+                 </div>      
+                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", textAlign:"center"}}>
+                 At IAC, we are focused on discovering new ways for innovation and 
+productivity to help our business thrive which requires a culture 
+where our members are willing to bring their diverse backgrounds, 
+strengths and perspective into the workplace. Our culture of inclusi-
+on and focus on health and well-being helps ensure that everyone –
+regardless of background – feels included and can contribute at 
+their best.</div>                 
+                 <div style={{clear:"both"}}></div>
+                 </p>
+               </div>
+
+               <div class="topic" id="mission">
+                 <h3>Corporate Social Responsibility</h3>
+                 <p>                
+                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", textAlign:"center"}}>
+                 IAC is of the belief that when businesses are conscious of their social 
+and environmental impact on the world, they can benefit society by 
+giving back and helping to find solutions to everyday issues. Our CSR
+activities are aligned with the Global framework Elanco’s Healthy Pur-
+pose that embody the very belief through programs that advance the
+well-being of animals, people and the planet.</div>    
+                 <div style={{display:"table-cell", width:"40%", verticalAlign:"middle"}}> 
+                   <img src={csrimage} width="100%" />
+                 </div>
+                 <div style={{clear:"both"}}></div>
                  </p>
                </div>
            </div>
