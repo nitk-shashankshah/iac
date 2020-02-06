@@ -1,0 +1,153 @@
+.aboutBanner{
+    background: url(../../assets/images/about.jpg) no-repeat center -410px;
+    width:100%;
+    background-size: 100%;
+    height:280px;
+    display: flex;
+    vertical-align: middle;
+}
+.headStrip{
+    height:40px;
+    background:#f0ab00;
+    width:100%;
+}
+.content{
+    width:90%;
+    min-height:100px;    
+    margin:50px auto;
+    display: flex;
+    flex-direction: row;
+}
+main.layout{
+    background:#fff;
+}
+.navPanel{
+    width:25%;
+    box-sizing: border-box;
+    position: sticky;
+}
+.contentPanel {
+    width:75%; 
+    box-sizing: border-box;
+}
+.navPanel ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+}
+.navPanel ul li {
+    padding:15px 0px;
+}
+.navPanel ul li a{
+    font-size: 18px;
+    padding-left:15px;
+    font-weight: bold;
+    font-family: inherit;
+    color:#3b3b3b;
+    text-decoration: none;
+}
+.navPanel ul li a.active{
+    color:#0079A6;
+    border-left:4px solid #0079A6;
+}
+.topic{
+    font-size:15px;
+    color:#7b7b7b;
+    line-height:24px;
+    clear:both;
+    padding-bottom:35px;
+    background: url(../../assets/images/divider.svg) no-repeat center bottom;
+    background-size:400px;
+}
+
+.topic h3{
+    text-align: center;
+    font-size:25px;
+    color:#333;
+    font-weight: normal;
+}
+#whyIAC span {
+    padding-top: 1%;
+    display: block;
+}
+#whyIAC img{
+    box-shadow: 0px 0px 2px 0px #ccc;
+    margin-left:10px;
+    margin-bottom:10px;
+    float:right;
+}
+.lhs{
+    float:left;
+    width:50%;    
+}
+.rhs{
+    float:right;    
+    width:50%;
+}
+
+.box{
+    border-radius:5px;
+    font-size:14px;
+    width:100%;
+    padding:5px 10px;
+    box-sizing: border-box;
+    line-height:18px;
+    box-shadow: 0px 2px 2px 0px #f5f5f5;
+}
+
+.box span{
+    font-size:12px;
+    font-style: italic;
+}
+
+.box1 {
+    background:#eaedfc;
+}
+
+.box2 {
+    width:56%;
+    margin-top:20px;    
+    background:#f2f5ee;
+    float:left;
+}
+
+.box3 {
+    width:calc(44% - 20px);
+    margin-top:20px;
+    float:right;
+    background:#f5efef;
+}
+
+.banners{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.row{
+    clear:both;
+    width:100%;
+    text-align:center;
+}
+.leaderboard{
+    width:540px;
+    margin:0px auto;    
+}
+.picture{
+    width:265px;
+    height:265px;
+    float:left;    
+    height:100%;
+}
+.picture img{
+    width:100%;
+    height:100%;
+}
+.details{
+    width:265px;
+    height:265px;
+    min-height:100%;
+    background:#ccc;
+    float:right;
+}

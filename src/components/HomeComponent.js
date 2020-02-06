@@ -54,10 +54,12 @@ class HomeComponent extends React.Component {
   menuMouseOut() {
   }
 
-  componentDidMount(){
-
+  componentDidMount() {
     $('.searchFeatures').after().click(() => {
       this.setState({"displaySearch":false});
+    });
+    $('.searchFeatures input').click(() => {
+      this.setState({"displaySearch":true});
     });
 
     var carousel = $("#carousel").waterwheelCarousel({
@@ -137,37 +139,37 @@ class HomeComponent extends React.Component {
           <ul>
             <li><img src={iacoverview} alt="IAC Overview"/></li>
             <li><b>IAC Overview</b></li>
-            <li><a href="/test">History</a></li>
-            <li><a href="/test">Why IAC</a></li>
-            <li><a href="/test">Global Capability Center</a></li>
-            <li><a href="/test">Leadership</a></li>
-            <li><a href="/test">Mission</a></li>
-            <li><a href="/test">Governance</a></li>
-            <li><a href="/test">Diversity and Inclusion</a></li>
-            <li><a href="/test">CSR</a></li>
-            <li><a href="/test">Innovation</a></li>
-            <li><a href="/test">Success Stories</a></li>
-            <li><a href="/test">FAQs</a></li>
+            <li><a href="/about">History</a></li>
+            <li><a href="/about">Why IAC</a></li>
+            <li><a href="/about">Global Capability Center</a></li>
+            <li><a href="/about">Leadership</a></li>
+            <li><a href="/about">Mission</a></li>
+            <li><a href="/about">Governance</a></li>
+            <li><a href="/about">Diversity and Inclusion</a></li>
+            <li><a href="/about">CSR</a></li>
+            <li><a href="/about">Innovation</a></li>
+            <li><a href="/about">Success Stories</a></li>
+            <li><a href="/about">FAQs</a></li>
           </ul>
           <ul>
             <li><img src={newsarticle} alt="News Article"/></li>
             <li><b>News Articles</b></li>
-            <li><a href="/test">Top Stories</a></li>
-            <li><a href="/test">Newsletters</a></li>
-            <li><a href="/test">eMagaines</a></li>
+            <li><a href="/about">Top Stories</a></li>
+            <li><a href="/about">Newsletters</a></li>
+            <li><a href="/about">eMagaines</a></li>
           </ul>
           <ul>
             <li><img src={event} alt="News Article"/></li>
             <li><b>Events</b></li><li><a href="/test">GDOP</a></li>
-            <li><a href="/test">Town Hall</a></li>
-            <li><a href="/test">Leadership visits</a></li>
+            <li><a href="/about">Town Hall</a></li>
+            <li><a href="/about">Leadership visits</a></li>
           </ul>
           <ul>
             <li><img src={engagement} alt="News Article"/></li>
             <li><b>Engagements</b></li>
-            <li><a href="/test">Employee Resource Groups</a></li>
-            <li><a href="/test">Testimonials</a></li>
-            <li><a href="/test">Business Integration</a></li>
+            <li><a href="/about">Employee Resource Groups</a></li>
+            <li><a href="/about">Testimonials</a></li>
+            <li><a href="/about">Business Integration</a></li>
           </ul>
           </div>  
           </div>

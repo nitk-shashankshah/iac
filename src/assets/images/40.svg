@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="283" height="292" viewBox="0 0 283 292">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.088" y1="0.251" x2="-0.379" y2="0.874" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#af3645"/>
+      <stop offset="0.278" stop-color="#ac3f48"/>
+      <stop offset="0.577" stop-color="#a84f4f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.898" y1="-0.062" x2="0.092" y2="1.076" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="1.164" y1="0.43" x2="-0.302" y2="1.053" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff4f64"/>
+      <stop offset="0.195" stop-color="#ff5868"/>
+      <stop offset="0.519" stop-color="#ff7174"/>
+      <stop offset="0.577" stop-color="#f77"/>
+    </linearGradient>
+    <clipPath id="clip-iPhone_X_XS_11_Pro_1">
+      <rect width="283" height="292"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_11_Pro_1" data-name="iPhone X/XS/11 Pro – 1" clip-path="url(#clip-iPhone_X_XS_11_Pro_1)">
+    <rect width="283" height="292" fill="#fff"/>
+    <g id="Group_2167" data-name="Group 2167" transform="translate(40 -48)">
+      <path id="Path_4575" data-name="Path 4575" d="M150.6,232.454l72.681-.109v72.879H150.6Z" fill="url(#linear-gradient)"/>
+      <g id="Group_2165" data-name="Group 2165">
+        <rect id="Rectangle_2994" data-name="Rectangle 2994" width="234.467" height="219.66" transform="translate(-11.188 87.527)" opacity="0.15"/>
+        <g id="Group_2164" data-name="Group 2164">
+          <g id="Group_2160" data-name="Group 2160">
+            <rect id="Rectangle_2995" data-name="Rectangle 2995" width="234.467" height="219.66" transform="translate(-18.609 82.614)" fill="#fff"/>
+          </g>
+          <g id="Group_2161" data-name="Group 2161" opacity="0.05">
+            <rect id="Rectangle_2996" data-name="Rectangle 2996" width="234.467" height="219.66" transform="translate(-18.609 82.614)" fill="url(#linear-gradient-2)"/>
+          </g>
+          <g id="Group_2163" data-name="Group 2163">
+            <g id="Group_2162" data-name="Group 2162">
+              <path id="Path_4576" data-name="Path 4576" d="M217.25,302.888H-20V82H217.25ZM-17.217,301.66H214.467V83.228H-17.217Z" fill="#fff"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Group_2166" data-name="Group 2166">
+        <path id="Path_4577" data-name="Path 4577" d="M219.97,302.1h-72.68l72.68-72.681Z" opacity="0.15"/>
+        <path id="Path_4578" data-name="Path 4578" d="M223.279,305.225H150.6l72.681-72.879Z" fill="url(#linear-gradient-3)"/>
+      </g>
+    </g>
+    <text id="_40_" data-name="40 % 
+" transform="translate(95.209 114)" fill="#f0ab00" font-size="55" font-family="Roboto-Condensed, Roboto"><tspan x="0" y="0">40 % </tspan><tspan x="0" y="64"></tspan></text>
+    <text id="Of_retail_GICs_were_Established_in_the_last_5_years" data-name="Of retail GICs were 
+Established in the 
+last 5 years" transform="translate(142 158)" fill="#7b7b7b" font-size="20" font-family="Roboto-Condensed, Roboto"><tspan x="-74.404" y="0">Of retail GICs were </tspan><tspan x="-71.479" y="30">Established in the </tspan><tspan x="-45.049" y="60">last 5 years</tspan></text>
+  </g>
+</svg>

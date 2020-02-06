@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="314" height="292" viewBox="0 0 314 292">
+  <defs>
+    <filter id="Rectangle_83" x="6" y="-2" width="302.653" height="302.653" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-iPhone_X_XS_11_Pro_1">
+      <rect width="314" height="292"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_11_Pro_1" data-name="iPhone X/XS/11 Pro – 1" clip-path="url(#clip-iPhone_X_XS_11_Pro_1)">
+    <rect width="314" height="292" fill="#fff"/>
+    <g id="Group_2503" data-name="Group 2503" transform="translate(-726 -2459.159)">
+      <g transform="matrix(1, 0, 0, 1, 726, 2459.16)" filter="url(#Rectangle_83)">
+        <rect id="Rectangle_83-2" data-name="Rectangle 83" width="284.653" height="284.653" transform="translate(15 4)" fill="#7fc4fd"/>
+      </g>
+    </g>
+  </g>
+</svg>
