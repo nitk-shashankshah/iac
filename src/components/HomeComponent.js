@@ -216,10 +216,9 @@ class HomeComponent extends React.Component {
             <li><img src={globalfinance} alt="Global Finance"/></li>
             <li><b>Global Finance</b></li>
             <li><a href="/test">US Finance</a></li>
-            <li><a href="/test">Intl Finance</a></li>
-            <li><br/><br/></li>
+            <li><a href="/test">Intl Finance</a></li>           
             
-            <li class="subListing"><img src={it} alt="Information Technology"/></li>
+            <li class="subListing" id="it"><img src={it} alt="Information Technology"/></li>
             <li><b>Information Technology</b></li>
             <li><a href="/test">Data Engineering</a></li>
             <li><a href="/test">UI/UX</a></li>

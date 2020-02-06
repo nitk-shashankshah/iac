@@ -1,7 +1,9 @@
 .App {
     text-align: center;
   }
-  
+  #it {
+    padding-top:76px!important;
+  }
   img.App-logo {
     pointer-events: none;
     box-sizing: border-box;
@@ -28,7 +30,7 @@
     padding:0 30px;
     overflow: hidden;
   }
-  
+ 
   .pageHeading {
     margin:0px!important;
     font-size:52px!important;
@@ -268,7 +270,7 @@
     background: #525657;
     margin-left:15px;
   }
-  
+
   .submenu{
     background: #fff;
     display: flex;
@@ -375,12 +377,21 @@
      left: 0px;
      margin: 0px;
      padding: 0px 20px;
-     background: #282c34;
+     background: #fff;
      z-index: 1000;
      width: 100%;
      position: absolute;
      padding: 0px;
      top:72px;
+   }
+   #it {
+    padding-top:none;
+   }
+   .subListing{
+    padding-top:50px!important;
+   }
+   .capabilityMenu{
+    left:unset!important;
    }
 
    .menu > div.actionIcon img{
@@ -443,14 +454,14 @@
      letter-spacing: 1px;
    }
    .submenu ul li a{
-      color:#fff;
+      color:#3c3c3c;
    }  
    .elanco-logo {
      padding:20px 20px;
    }
    
    .submenu ul li:nth-child(2){
-     color:#fff;
+     color:#3c3c3c;
    }
 
 
@@ -505,4 +516,3 @@
     color:rgb(153, 153, 153);;
     text-align: center;
   }
-  
