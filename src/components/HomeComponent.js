@@ -25,14 +25,14 @@ import it from '../assets/icons/it.svg';
 import manufacturing from '../assets/icons/manufacturing.svg';
 import rnd from '../assets/icons/rnd.svg';
 
-import './home.css';
+import './css/home.css';
 import $ from 'jquery';
 import '../jquery.waterwheelCarousel.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faKey } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faKey, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBars, faKey);
+library.add(faBars, faKey, faSearch);
 
 
 class HomeComponent extends React.Component {
@@ -41,18 +41,25 @@ class HomeComponent extends React.Component {
     this.state = {
       images: [slider1, slider2, slider3, slider4, slider5,slider6, slider7],
       isResponsive: false,
-      openMenu: 0
+      openMenu: 0,
+      displaySearch: false
     };
     this.rollMenu = this.rollMenu.bind(this);
     this.menuMouseOver = this.menuMouseOver.bind(this);
     this.subMenuMouseOut = this.subMenuMouseOut.bind(this);    
     this.menuMouseOut = this.menuMouseOut.bind(this);
+    this.showSearchbox = this.showSearchbox.bind(this);
   }
 
   menuMouseOut() {
   }
 
   componentDidMount(){
+
+    $('.searchFeatures').after().click(() => {
+      this.setState({"displaySearch":false});
+    });
+
     var carousel = $("#carousel").waterwheelCarousel({
       flankingItems: 3,
       orientation: ((window.innerWidth > 1200) ? 'horizontal' : 'vertical'), 
@@ -84,6 +91,11 @@ class HomeComponent extends React.Component {
     });
 
   }
+
+  showSearchbox() {
+   this.setState({"displaySearch":!this.state.displaySearch});
+  }
+
   menuMouseClick(x) {
     if (this.state.isResponsive)
       this.setState({openMenu: this.state.openMenu ? 0 : x});   
@@ -107,7 +119,8 @@ class HomeComponent extends React.Component {
     <div>
       <header className="header">
           <img className="App-logo" src={iaclogo} alt="logo" />
-          <div className={this.state.isResponsive ? "responsive menu" : "menu"}>
+          <div className="links">
+          <div className={this.state.isResponsive ? "responsive menu" : "menu"} style={this.state.displaySearch ? {"visibility":"hidden"} : {}}>
           <div class="item">
             <span 
               href="home" 
@@ -232,34 +245,18 @@ class HomeComponent extends React.Component {
           </div>
           <div class="item">
             <span href="governance" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(3)} onClick={() => this.menuMouseClick(3)}>Governance</span>
-          {/*<div className={this.state.openMenu === 3 ? "submenu governanceMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(3)} onMouseOut={this.subMenuMouseOut}>
-          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
-          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
-          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
-          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
-          </div>*/}
           </div>
           <div class="item"><span href="products" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(4)} onClick={() => this.menuMouseClick(4)}>Engage Us</span>
-          {/*<div className={this.state.openMenu === 4 ? "submenu engageMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(4)} onMouseOut={this.subMenuMouseOut}>
-          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
-          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
-          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
-          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
-          </div>*/}
           </div>
           <div class="item"><span href="products" onMouseOut={() => this.menuMouseOut()} onMouseOver={() => this.menuMouseOver(5)} onClick={() => this.menuMouseClick(5)}>Quick Links</span>
-          {/*<div className={this.state.openMenu === 5 ? "submenu quickLinksMenu" : "submenu"} onMouseOver={() => this.subMenuMouseOver(5)} onMouseOut={this.subMenuMouseOut}>
-          <ul><li><b>IAC Overview</b></li><li><a href="/test">History</a></li><li><a href="/test">Global Capability Center</a></li><li><a href="/test">Leadership</a></li><li><a href="/test">Mission & Vision</a></li><li><a href="/test">Diversity & Inclusion</a></li><li><a href="/test">CSR</a></li><li><a href="/test">Innovation</a></li><li><a href="/test">Success Stories</a></li><li><a href="/test">FAQs</a></li></ul>
-          <ul><li><b>News Articles</b></li><li><a href="/test">Top Stories</a></li><li><a href="/test">Newsletters</a></li><li><a href="/test">eMagaines</a></li></ul>
-          <ul><li><b>Events</b></li><li><a href="/test">GDOP</a></li><li><a href="/test">Town Hall</a></li><li><a href="/test">Leadership visits</a></li></ul>
-          <ul><li><b>Engagements</b></li><li><a href="/test">Employee Resource Groups</a></li><li><a href="/test">Testimonials</a></li><li><a href="/test">Business Integration</a></li></ul>
-          </div>*/}
-          </div>       
-          <div className="actionIcon"><a href="search"><img src={search} alt="logo" /></a></div>
-          <div className="actionIcon"><a href="login"><img src={login} alt="logo" /></a></div>
-          <div className="actionIcon locateus"><a href="locate"><img src={locate} alt="logo" /></a></div>
+          </div>  
+          </div>    
+          <div className="actionIcon" ><img src={search} className="search" alt="Search" onClick={() => this.showSearchbox()} /></div>
+          <div className="actionIcon"><a href="login"><img src={login} alt="Login" /></a></div>
+          <div className="actionIcon locateus"><a href="locate"><img src={locate} alt="Locate Us" /></a></div>
           <img src={logo} className="elanco-logo" alt="logo" />
           </div>
+          <div className={this.state.displaySearch ? "searchBar show" : "searchBar"}><div class="searchButton"><FontAwesomeIcon icon="search" /></div><div class="searchFeatures"><input type="text" placeholder="Search"/></div></div>
           <div className="icon"><FontAwesomeIcon icon="bars" onClick={this.rollMenu}/></div>
       </header>
       <main>
