@@ -19,11 +19,6 @@ import rnd from '../assets/icons/rnd.svg';
 import iac from '../assets/images/pic1.svg';
 import india from '../assets/images/india.svg';
 
-import banner1 from '../assets/images/27.svg';
-import banner2 from '../assets/images/40.svg';
-import banner3 from '../assets/images/1400.svg';
-import banner4 from '../assets/images/1.5m.svg';
-
 import mission from '../assets/images/mission.svg';
 import csrimage from '../assets/images/csr.svg';
 
@@ -49,29 +44,65 @@ class AboutComponent extends React.Component {
       isResponsive: false,
       openMenu: 0,
       displaySearch: false,
-      activeLink:1
+      activeLink:1,
+      row:-1,
+      col:0,
+      info:[["Elanco", "needs", "sdsd"], ["xds","ds","sdds sdsd"], ["zxx", "ffdfd", "pop"]] 
     };
     this.rollMenu = this.rollMenu.bind(this);
     this.menuMouseOver = this.menuMouseOver.bind(this);
     this.subMenuMouseOut = this.subMenuMouseOut.bind(this);    
     this.menuMouseOut = this.menuMouseOut.bind(this);
     this.showSearchbox = this.showSearchbox.bind(this);
-    this.setActiveLink = this.setActiveLink.bind(this);
+    this.learnMore = this.learnMore.bind(this);
+    this.closeInfo = this.closeInfo.bind(this);
   }
   menuMouseOut(){
 
   }
-  setActiveLink(x) {
-    this.setState({activeLink : x});
+
+  closeInfo() {
+    this.setState({row:-1});
+  }
+
+  learnMore(x,y) {
+    this.setState({row:x});
+    this.setState({col:y});    
   }
 
   componentDidMount(){
     $('.searchFeatures').after().click(() => {
       this.setState({"displaySearch":false});
     });
-    $('a').click(function(){
+    
+    $(window).scroll(function() {
+       if (window.scrollY > 200) {
+         $("header").addClass("headerSticky");
+         $("#headStrip").addClass("headStripSticky");
+         $(".links").css("visibility","hidden");
+         $(".pageTitle").css("display","block");
+         $("#movableLogo").addClass("movableLogo");
+       }
+       else { 
+         $("header").removeClass("headerSticky");
+         $("#headStrip").removeClass("headStripSticky");
+         $(".links").css("visibility","visible");
+         $(".pageTitle").css("display","none");
+         $("#movableLogo").removeClass("movableLogo");
+       }
+    });
+
+    $('.navPanel ul li a').mouseover(function(){
+      $(this).addClass("hoverMe");
+    });
+    $('.navPanel ul li a').mouseout(function(){
+      $(this).removeClass("hoverMe");
+    });
+    $('.navPanel ul li a').click(function(){
+        $('a').removeClass("active");
+        $(this).addClass("active");
         $('html, body').animate({
-            scrollTop: $( $(this).attr('href') ).offset().top
+            scrollTop: $( $(this).attr('href') ).offset().top - 150
         }, 500);
         return false;
     });
@@ -103,7 +134,7 @@ class AboutComponent extends React.Component {
   return (
     <div>
       <header className="header">
-          <img className="App-logo" src={iaclogo} alt="logo" />
+          <img className="App-logo" src={iaclogo} alt="logo" id="movableLogo" />
           <div className="links">
           <div className={this.state.isResponsive ? "responsive menu" : "menu"} style={this.state.displaySearch ? {"visibility":"hidden"} : {}}>
           <div class="item">
@@ -114,7 +145,7 @@ class AboutComponent extends React.Component {
               onClick={() => this.menuMouseClick(1)}>
               About Us
             </span>
-          <div
+          {/*<div
             className={this.state.openMenu === 1 ? "submenu homeMenu" : "submenu"}
             onMouseOver={() => this.subMenuMouseOver(1)}
             onMouseOut={this.subMenuMouseOut}
@@ -154,7 +185,7 @@ class AboutComponent extends React.Component {
             <li><a href="/test">Testimonials</a></li>
             <li><a href="/test">Business Integration</a></li>
           </ul>
-          </div>  
+          </div>  */}
           </div>
           <div class="item">
             <span
@@ -242,6 +273,7 @@ class AboutComponent extends React.Component {
           <img src={logo} className="elanco-logo" alt="logo" />
           </div>
           <div className={this.state.displaySearch ? "searchBar show" : "searchBar"}><div class="searchButton"><FontAwesomeIcon icon="search" /></div><div class="searchFeatures"><input type="text" placeholder="Search"/></div></div>
+          <div className="pageTitle">ABOUT US</div>
           <div className="icon"><FontAwesomeIcon icon="bars" onClick={this.rollMenu}/></div>
       </header>
       <main class="layout">
@@ -253,21 +285,21 @@ class AboutComponent extends React.Component {
             <p>Chat With Us</p>
           </div>
         </div>
-        <div class="headStrip" />
+        <div id="headStrip" />
         <div class="content">
            <div class="navPanel">
            <ul>
-              <li><a href="#history" className={this.state.activeLink==1 ? "active": ""} onClick={() => this.setActiveLink(1)}>History</a></li>              
-              <li><a href="#whyIAC" className={this.state.activeLink==2 ? "active": ""} onClick={() => this.setActiveLink(2)}>Why IAC</a></li>
-              <li><a href="#globalCapabilityCenter" className={this.state.activeLink==3 ? "active": ""} onClick={() => this.setActiveLink(3)}>Global Capability Center</a></li>
-              <li><a href="#leadership" className={this.state.activeLink==4 ? "active": ""} onClick={() => this.setActiveLink(4)}>Leadership</a></li>
-              <li><a href="#mission" className={this.state.activeLink==5 ? "active": ""} onClick={() => this.setActiveLink(5)}>Mission</a></li>
-              <li><a href="#governance" className={this.state.activeLink==6 ? "active": ""} onClick={() => this.setActiveLink(6)}>Governance</a></li>
-              <li><a href="#diversity" className={this.state.activeLink==7 ? "active": ""} onClick={() => this.setActiveLink(7)}>Diversity & Inclusion</a></li>              
-              <li><a href="#csr" className={this.state.activeLink==8 ? "active": ""} onClick={() => this.setActiveLink(8)}>CSR</a></li>
-              <li><a href="#innovation" className={this.state.activeLink==9 ? "active": ""} onClick={() => this.setActiveLink(9)}>Innovation</a></li>
-              <li><a href="#successStories" className={this.state.activeLink==10 ? "active": ""} onClick={() => this.setActiveLink(10)}>Success Stories</a></li>
-              <li><a href="#faqa" className={this.state.activeLink==11 ? "active": ""} onClick={() => this.setActiveLink(11)}>FAQs</a></li>
+              <li><a href="#history" className={this.state.activeLink==1 ? "active": ""}>History</a></li>              
+              <li><a href="#whyIAC" className={this.state.activeLink==2 ? "active": ""}>Why IAC</a></li>
+              <li><a href="#globalCapabilityCenter" className={this.state.activeLink==3 ? "active": ""}>Global Capability Center</a></li>
+              <li><a href="#leadership" className={this.state.activeLink==4 ? "active": ""}>Leadership</a></li>
+              <li><a href="#mission" className={this.state.activeLink==5 ? "active": ""}>Mission</a></li>
+              <li><a href="#governance" className={this.state.activeLink==6 ? "active": ""}>Governance</a></li>
+              <li><a href="#diversity" className={this.state.activeLink==7 ? "active": ""}>Diversity & Inclusion</a></li>              
+              <li><a href="#csr" className={this.state.activeLink==8 ? "active": ""}>CSR</a></li>
+              <li><a href="#innovation" className={this.state.activeLink==9 ? "active": ""}>Innovation</a></li>
+              <li><a href="#successStories" className={this.state.activeLink==10 ? "active": ""}>Success Stories</a></li>
+              <li><a href="#faqs" className={this.state.activeLink==11 ? "active": ""}>FAQs</a></li>
            </ul>
            </div>
            <div class="contentPanel">
@@ -343,7 +375,7 @@ to 50% startups and biotech companies</p>
 
  <p>Fastest growing @7 %</p>
 
-<p style={{marginLeft:"7%"}}>
+<p style={{marginLeft:"7%",lineHeight:"22px"}}>
            Services: 53.9 per cent<br/>
            Industry: 29.1 per cent<br/>
            Agriculture: 17.1 per cent</p>
@@ -352,12 +384,32 @@ to 50% startups and biotech companies</p>
                  <div style={{clear:"both"}}></div>
 
                  <div class="banners">
-                   <img src={banner1} style={{width:"25%"}}/>
-                   <img src={banner2} style={{width:"25%"}} />
-                   <img src={banner3} style={{width:"25%"}} />
-                   <img src={banner4} style={{width:"25%"}} />
-                 </div>
-
+                  <div class="flicker banner1">
+                    <div className="diversity">
+                       <p>27%</p> 
+                       <p><span>Of the US based Global 2000 companies have a GIC in India</span></p>  
+                    </div>
+                  </div>
+                  <div class="flicker banner2">
+                    <div className="diversity">
+                       <p>40% </p> 
+                       <p><span>Of retail GICs were established in the last 5 years</span></p>  
+                   </div>
+                  </div>
+                  <div class="flicker banner3">
+                    <div className="diversity">
+                       <p>1400+</p> 
+                       <p><span>MNCs have set up GICs in India, till date</span> </p>                        
+                    </div>
+                  </div>
+                  <div class="flicker banner4">
+                    <div className="diversity">
+                       <p>1.5M </p> 
+                       <p><span>The current installed talent in GCCI</span></p>                      
+                    </div>
+                  </div>
+                </div>
+                <div style={{clear:"both"}}></div>
                </div>
                
                <div class="topic" id="leadership">
@@ -409,7 +461,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(0,0)}>Learn More</span>
                      </div>
                    </div>
                    <div class="funcleaderboard">
@@ -418,7 +470,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(0,1)}>Learn More</span>
                      </div>
                    </div>
                    <div class="funcleaderboard">
@@ -427,9 +479,15 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(0,2)}>Learn More</span>
                      </div>
-                   </div>
+                   </div>                
+                  </div>
+                  <div class="row">
+                    <div className={this.state.row === 0 ? "info show" : "info"}>
+                      <div class="close"><input type="button" value="X" onClick={()=>this.closeInfo()}/></div>
+                      <p>{this.state.info[0][this.state.col]}</p>
+                    </div>
                   </div>
                   <div class="row">
                    <div class="funcleaderboard">
@@ -438,7 +496,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(1,0)}>Learn More</span>
                      </div> 
                    </div>
                    
@@ -448,7 +506,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(1,1)}>Learn More</span>
                      </div> 
                    </div>
 
@@ -458,10 +516,17 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(1,2)}>Learn More</span>
                      </div>     
                    </div>
                   </div>
+                  <div class="row">
+                    <div className={this.state.row === 1 ? "info show" : "info"}>
+                      <div class="close"><input type="button" value="X" onClick={()=>this.closeInfo()}/></div>
+                    <p>{this.state.info[1][this.state.col]}</p>
+                    </div>
+                  </div>
+
                   <div class="row">
                    <div class="funcleaderboard">
                      <div class="funcPicture"></div> 
@@ -469,7 +534,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(2,0)}>Learn More</span>
                      </div> 
                    </div>
                    <div class="funcleaderboard">
@@ -478,7 +543,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(2,1)}>Learn More</span>
                      </div>
                    </div>
                    <div class="funcleaderboard">
@@ -487,10 +552,16 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                            <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <a href="/about">Learn More</a>
+                     <span onClick={()=>this.learnMore(2,2)}>Learn More</span>
                      </div>
                    </div>
                  </div>
+                 <div class="row">
+                    <div className={this.state.row === 2 ? "info show" : "info"}>
+                      <div class="close"><input type="button" value="X" onClick={()=>this.closeInfo()}/></div>
+                    <p>{this.state.info[1][this.state.col]}</p>
+                    </div>
+                  </div>
                  <div style={{clear:"both"}}></div>
                </div>
 
@@ -498,7 +569,7 @@ to 50% startups and biotech companies</p>
                <div class="topic" id="mission">
                  <h3>Mission</h3>
                  <p>                
-                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", fontWeight:"bold", lineHeight:"36px", fontSize:"24px", textAlign:"center"}}>
+                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", color:"#303f6a", fontWeight:"normal", lineHeight:"36px", fontSize:"28px", textAlign:"center"}}>
                  Our mission is to enable Elanco’s IPP 
 strategy by building global capabilities, 
 fostering innovations and forging 
@@ -525,14 +596,47 @@ strengths and perspective into the workplace. Our culture of inclusi-
 on and focus on health and well-being helps ensure that everyone –
 regardless of background – feels included and can contribute at 
 their best.</div>                 
-                 <div style={{clear:"both"}}></div>
                  </p>
-               </div>
+                 <div className="row">
+                   <div className="diversity">
+                       <p>17+</p>
+                       <p><span>State diversity of employees</span></p>
+                   </div>
+                   
+                   <div className="diversity">
+                       <p>50%</p>
+                       <p><span>Diversity in leadership</span></p>
+                   </div>
+                   
+                   <div className="diversity">
+                       <p>40%</p>
+                       <p><span>Women in IAC workforce</span></p>
+                   </div>
+                 </div>
+                 
+                 <div className="row">
+                   <div className="diversity">
+                       <p>125+</p>
+                       <p><span>Employees</span></p>
+                   </div>
+                   
+                   <div className="diversity">
+                       <p>32</p>
+                       <p><span>Average age of employees</span></p>
+                   </div>
+                   
+                   <div className="diversity">
+                       <p>8+</p>
+                       <p><span>Average years of experience</span></p>
+                   </div>
+                 </div>  
+                 <div style={{clear:"both"}}></div>
+                </div>
 
-               <div class="topic" id="mission">
+               <div class="topic" id="csr">
                  <h3>Corporate Social Responsibility</h3>
                  <p>                
-                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", textAlign:"center"}}>
+                 <div style={{display:"table-cell", width:"50%", verticalAlign:"middle", paddingRight:"10px", textAlign:"center"}}>
                  IAC is of the belief that when businesses are conscious of their social 
 and environmental impact on the world, they can benefit society by 
 giving back and helping to find solutions to everyday issues. Our CSR
@@ -545,6 +649,15 @@ well-being of animals, people and the planet.</div>
                  <div style={{clear:"both"}}></div>
                  </p>
                </div>
+
+               
+               <div class="topic" id="governance"></div>
+               
+               <div class="topic" id="innovation"></div>
+               
+               <div class="topic" id="successStories"></div>
+               
+               <div class="topic" id="faqs"></div>
            </div>
         </div>
       </main>

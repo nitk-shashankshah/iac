@@ -9,6 +9,7 @@
     box-sizing: border-box;
     width:85px;
     float:left;
+    transition:left 1s!important;
   }
   .subListing{
     padding:0px!important;
@@ -34,7 +35,7 @@
     background:#282c34;
   }
   .show {
-    display: block;
+    display: block!important;
   }
   .searchFeatures {
     width:350px;
@@ -86,7 +87,14 @@
     justify-content: space-between;
     overflow: hidden;
   }
- 
+  
+  ::-moz-selection { /* Code for Firefox */
+    color:#f0ab00;
+  }
+
+  ::selection {
+    color: #f0ab00;
+  }
   .links {
     display: flex;
     flex-direction: horizontal;
