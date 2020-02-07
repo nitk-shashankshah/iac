@@ -274,7 +274,7 @@ main.layout{
 .name{
     font-size:20px;
     font-weight: bold;
-    line-height:32px;
+    line-height:32px!important;
 }
 .knowMore a{
     text-decoration: none;
@@ -283,9 +283,10 @@ main.layout{
 .desc{
     text-align: left;
 }
-.desc a{
+.desc span{
     text-decoration: none;
     color:#0079A6;
+    line-height:50px;
 }
 
 .diversity{
