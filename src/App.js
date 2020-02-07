@@ -1,17 +1,19 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import createHistory from 'history/createBrowserHistory';
+
 import './App.css';
 import HomeComponent from './components/HomeComponent';
 import AboutComponent from './components/AboutComponent';
 
 function App() {
   return (
-    <Router>
+      <BrowserRouter>
       <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -22,12 +24,12 @@ function App() {
           <Route path="/about">
             <AboutComponent />
           </Route> 
-          <Route path="/">
+          <Route exact path="/">
             <HomeComponent />
           </Route>         
         </Switch>
       </div>
-    </Router>
+      </BrowserRouter>
   );
 }
 
