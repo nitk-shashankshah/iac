@@ -1,26 +1,22 @@
 {
   "files": {
-    "main.css": "/iac/static/css/main.13f9cff0.chunk.css",
-    "main.js": "/iac/static/js/main.21dcad86.chunk.js",
-    "main.js.map": "/iac/static/js/main.21dcad86.chunk.js.map",
+    "main.css": "/iac/static/css/main.449c7bb9.chunk.css",
+    "main.js": "/iac/static/js/main.03af8c78.chunk.js",
+    "main.js.map": "/iac/static/js/main.03af8c78.chunk.js.map",
     "runtime-main.js": "/iac/static/js/runtime-main.fddfc49c.js",
     "runtime-main.js.map": "/iac/static/js/runtime-main.fddfc49c.js.map",
-    "static/js/2.f0e3b2e4.chunk.js": "/iac/static/js/2.f0e3b2e4.chunk.js",
-    "static/js/2.f0e3b2e4.chunk.js.map": "/iac/static/js/2.f0e3b2e4.chunk.js.map",
+    "static/js/2.13a10b17.chunk.js": "/iac/static/js/2.13a10b17.chunk.js",
+    "static/js/2.13a10b17.chunk.js.map": "/iac/static/js/2.13a10b17.chunk.js.map",
     "index.html": "/iac/index.html",
-    "precache-manifest.03435ff27b1005447e2cef465b7ba1af.js": "/iac/precache-manifest.03435ff27b1005447e2cef465b7ba1af.js",
+    "precache-manifest.fdc045ea1ae4007bd7289f7bbd4bc6b0.js": "/iac/precache-manifest.fdc045ea1ae4007bd7289f7bbd4bc6b0.js",
     "service-worker.js": "/iac/service-worker.js",
-    "static/css/main.13f9cff0.chunk.css.map": "/iac/static/css/main.13f9cff0.chunk.css.map",
-    "static/js/2.f0e3b2e4.chunk.js.LICENSE": "/iac/static/js/2.f0e3b2e4.chunk.js.LICENSE",
-    "static/media/1.5m.svg": "/iac/static/media/1.5m.30b28421.svg",
-    "static/media/1400.svg": "/iac/static/media/1400.2b3f07ed.svg",
-    "static/media/27.svg": "/iac/static/media/27.ff17b68d.svg",
-    "static/media/40.svg": "/iac/static/media/40.1f573289.svg",
+    "static/css/main.449c7bb9.chunk.css.map": "/iac/static/css/main.449c7bb9.chunk.css.map",
+    "static/js/2.13a10b17.chunk.js.LICENSE": "/iac/static/js/2.13a10b17.chunk.js.LICENSE",
     "static/media/LKN.jpg": "/iac/static/media/LKN.fc9dbc36.jpg",
     "static/media/Mukta.jpg": "/iac/static/media/Mukta.a8121260.jpg",
     "static/media/index.css": "/iac/static/media/Roboto-Regular.5673da52.ttf",
     "static/media/Sajeesh.jpg": "/iac/static/media/Sajeesh.f56e8897.jpg",
-    "static/media/about.css": "/iac/static/media/divider.c467a57a.svg",
+    "static/media/about.css": "/iac/static/media/yellowpng.d07c99f6.png",
     "static/media/home.css": "/iac/static/media/background.7eb74f41.jpg",
     "static/media/csr.svg": "/iac/static/media/csr.db57125b.svg",
     "static/media/diversity.svg": "/iac/static/media/diversity.3f890f76.svg",
@@ -49,8 +45,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.fddfc49c.js",
-    "static/js/2.f0e3b2e4.chunk.js",
-    "static/css/main.13f9cff0.chunk.css",
-    "static/js/main.21dcad86.chunk.js"
+    "static/js/2.13a10b17.chunk.js",
+    "static/css/main.449c7bb9.chunk.css",
+    "static/js/main.03af8c78.chunk.js"
   ]
 }
