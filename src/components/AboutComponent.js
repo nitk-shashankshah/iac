@@ -74,8 +74,41 @@ class AboutComponent extends React.Component {
     $('.searchFeatures').after().click(() => {
       this.setState({"displaySearch":false});
     });
-    
-    $(window).scroll(function() {
+
+    $(window).on('mousewheel', function(){     
+       if ((window.scrollY <= $("#history").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(0).find("a").addClass("active");
+       }
+       else if ((window.scrollY > $("#history").offset().top - 150)  && (window.scrollY <= $("#whyIAC").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(0).find("a").addClass("active");
+       }
+       else if ((window.scrollY > $("#whyIAC").offset().top - 150) && (window.scrollY <= $("#globalCapabilityCenter").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(1).find("a").addClass("active");
+       }
+       else if ((window.scrollY > $("#globalCapabilityCenter").offset().top - 150) && (window.scrollY <= $("#leadership").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(2).find("a").addClass("active");
+       }
+       else if ((window.scrollY > $("#leadership").offset().top - 150) && (window.scrollY <= $("#mission").offset().top - 150)){        
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(3).find("a").addClass("active");
+       }
+       else if ((window.scrollY > $("#mission").offset().top - 150) && (window.scrollY <= $("#diversity").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(4).find("a").addClass("active");
+       }       
+       else if ((window.scrollY > $("#diversity").offset().top - 150) && (window.scrollY <= $("#csr").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(6).find("a").addClass("active");
+       }
+       else if ((window.scrollY > $("#csr").offset().top - 150) && (window.scrollY <= $("#innovation").offset().top - 150)){
+        $('.navPanel ul li a').removeClass("active");
+        $(".navPanel ul").find("li").eq(7).find("a").addClass("active");
+       }
+
        if (window.scrollY > 200) {
          $("header").addClass("headerSticky");
          $("#headStrip").addClass("headStripSticky");
@@ -98,12 +131,14 @@ class AboutComponent extends React.Component {
     $('.navPanel ul li a').mouseout(function(){
       $(this).removeClass("hoverMe");
     });
-    $('.navPanel ul li a').click(function(){
-        $('a').removeClass("active");
-        $(this).addClass("active");
-        $('html, body').animate({
+    $('.navPanel ul li a').click(function(){     
+        var lnk = $(this);
+          $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top - 150
-        }, 500);
+        }, 500, 'swing', function() {
+          $('a').removeClass("active");
+          lnk.addClass("active");
+        });
         return false;
     });
   }

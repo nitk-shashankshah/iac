@@ -314,3 +314,38 @@ main.layout{
     font-weight: normal;
     color: #7b7b7b;
 }
+
+.information{
+    width:80%;
+    margin: 80px auto;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.leaderName {
+    font-size:36px;
+    color:#000;
+    line-height: 42px;
+}
+
+.designation {
+    font-size:18px;
+    line-height: 24px;
+    font-weight: normal;
+}
+.information img {
+    padding:20px;
+}
+.biography {
+    text-align:left;
+}
+.bioHeading{
+    font-size:24px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 10px;
+    margin:10px 0px 0px 0px;
+    padding:0px;
+}

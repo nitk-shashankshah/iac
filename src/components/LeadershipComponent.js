@@ -25,6 +25,10 @@ import it from '../assets/icons/it.svg';
 import manufacturing from '../assets/icons/manufacturing.svg';
 import rnd from '../assets/icons/rnd.svg';
 
+import pic1 from '../assets/images/Mukta.jpg';
+import pic2 from '../assets/images/Sajeesh.jpg';
+import pic3 from '../assets/images/LKN.jpg';
+
 import './css/home.css';
 import $ from 'jquery';
 import '../jquery.waterwheelCarousel.js';
@@ -39,10 +43,11 @@ class HomeComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [slider1, slider2, slider3, slider4, slider5,slider6, slider7],
       isResponsive: false,
       openMenu: 0,
-      displaySearch: false
+      displaySearch: false,
+      images: [pic1, pic2, pic3],
+      names: ["Mukta Arora", "Sajeesh Krishnan", "Lakshminarayan"]
     };
     this.rollMenu = this.rollMenu.bind(this);
     this.menuMouseOver = this.menuMouseOver.bind(this);
@@ -61,37 +66,6 @@ class HomeComponent extends React.Component {
     $('.searchFeatures input').click(() => {
       this.setState({"displaySearch":true});
     });
-
-    var carousel = $("#carousel").waterwheelCarousel({
-      flankingItems: 3,
-      orientation: ((window.innerWidth > 1200) ? 'horizontal' : 'vertical'), 
-      movingToCenter: function ($item) {
-        $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
-      },
-      movedToCenter: function ($item) {
-        $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
-      },
-      movingFromCenter: function ($item) {
-        $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
-      },
-      movedFromCenter: function ($item) {
-        $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
-      },
-      clickedCenter: function ($item) {
-        $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
-      }
-    });
-
-    $('#prev').bind('click', function () {
-      carousel.prev();
-      return false
-    });
-
-    $('#next').bind('click', function () {
-      carousel.next();
-      return false;
-    });
-
   }
 
   showSearchbox() {
@@ -118,7 +92,7 @@ class HomeComponent extends React.Component {
 
   render() {
   return (
-    <div className="darkBg">
+    <div>
       <header className="header">
           <img className="App-logo" src={iaclogo} alt="logo" />
           <div className="links">
@@ -261,39 +235,32 @@ class HomeComponent extends React.Component {
           <div className={this.state.displaySearch ? "searchBar show" : "searchBar"}><div class="searchButton"><FontAwesomeIcon icon="search" /></div><div class="searchFeatures"><input type="text" placeholder="Search"/></div></div>
           <div className="icon"><FontAwesomeIcon icon="bars" onClick={this.rollMenu}/></div>
       </header>
-      <main>
-        <div className="banner">
-          <div class="detailSection">
-            <div className="details">
-            <p className="pageHeading">Leading Through Innovation</p>
-            <p>IAC is Elanco's Global Capability Center (GCC), established in India, and is a key pillar in driving Elanco's IPP strategy. GCC or Global Capability Center is an offshore, owned, integrated strategic platform for leveraging global talent.</p>
-            <a href="more" className="btn primary">Know More</a>
-            <a href="watchVideoBtn" className="btn activeBtn">Watch Video..</a>
-            </div>
-          </div>
-          <div class="chatBtn">          
+      <main>   
+        <div class="chatBtn" style={{"position":"fixed"}}>          
           <img src={chat} alt="Chat with us"/>
-            <p>Chat With Us</p>
-          </div>
+          <p>Chat With Us</p>
         </div>
-        <div class="sliderSection">     
-        <p className="capabilities">Our Capabilities</p>
-        <div class="slider">
-        <a href="previous" id="prev" alt="Previous"></a>
-        <div id="carousel">
-          <a href="/eks" alt="Elanco Knowledge Solutions"><div style={{"background":`url(${slider1})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-1"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="/gfin" alt="Global Finance"><div style={{"background":`url(${slider2})`,"background-position":"left bottom","width":"266px","height":"318px","background-size":"contain"}} id="item-2"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="/operations" alt="Global Commercial Operations"><div style={{"background":`url(${slider3})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-3"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="/marketing" alt="Global Marketing"><div style={{"background":`url(${slider4})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-4"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="/it" alt="Information Technology"><div style={{"background":`url(${slider5})`,"background-position":"left bottom","width":"268px","height":"320px","background-size":"contain"}} id="item-5"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="/manufacturing" alt="Manufacturing"><div style={{"background":`url(${slider6})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-6"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>
-          <a href="/rnd" alt="Research and Development"><div style={{"background":`url(${slider7})`,"background-position":"left bottom","width":"273px","height":"318px","background-size":"contain"}} id="item-7"><p style={{"width": "100%","height": "100%","background":"rgb(255, 255, 255, 0.8)","padding":"0px","margin":"0px","display": "block","visibility": "visible","position": "absolute","z-index": "4","opacity": "0.8"}}></p></div></a>     
+        <div className="information">
+           <div class="topic centerAlign">
+                 <p>
+                   <span className="leaderName">{this.state.names[0]}</span>
+                 </p>
+                 <p>
+                   <span className="designation">
+                     Managing Director, EIACI<br/>
+                     R&D Regulatory & Admin
+                   </span>
+                 </p>
+                 <img src={this.state.images[0]} />
+                 <p className="bioHeading">{this.state.names[0]}'s biography</p>
+                 <p className="biography">
+                 Elanco Innovation & Alliance Centre India is registered in India on 14th March, 2019, it has been formally inaugurated by Aaron Schacht,
+Executive VP on 1st October, 2019. We believe in leading through Innovation Productivity and Portfolio (IPP) strategy.
+                 </p>
+           </div>
         </div>
-        <a href="next" id="next" alt="Next"></a>
-        </div>
-        </div> 
-        </main>
-        </div>
+      </main>
+      </div>
   );
   }
 }

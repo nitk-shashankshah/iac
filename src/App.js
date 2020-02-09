@@ -10,6 +10,7 @@ import createHistory from 'history/createBrowserHistory';
 import './App.css';
 import HomeComponent from './components/HomeComponent';
 import AboutComponent from './components/AboutComponent';
+import LeadershipComponent from './components/LeadershipComponent';
 
 function App() {
   return (
@@ -24,9 +25,12 @@ function App() {
           <Route path="/about">
             <AboutComponent />
           </Route> 
+          <Route exact path="/leadership">
+            <LeadershipComponent />
+          </Route> 
           <Route exact path="/">
             <HomeComponent />
-          </Route>         
+          </Route>          
         </Switch>
       </div>
       </BrowserRouter>
