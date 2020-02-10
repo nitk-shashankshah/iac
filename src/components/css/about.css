@@ -23,15 +23,7 @@
     position: relative!important;
     transition:left 1s!important;
 }
-.pageTitle {
-    left: calc(30% - 10px);
-    position: absolute;
-    z-index: 100;
-    transform: translateX(-50%);
-    font-size:22px;
-    padding-top:20px;
-    display:none;
-}
+
 .content{
     width:90%;
     min-height:100px;    
@@ -348,4 +340,30 @@ main.layout{
     line-height: 10px;
     margin:10px 0px 0px 0px;
     padding:0px;
+}
+ul.tabs{
+    display: flex;
+    flex-direction: row;
+    margin:0px;
+    padding: 0px;
+    position: relative;
+    width:75%;
+    left:25%;
+    list-style-type: none;
+}
+
+ul.tabs li a{
+    color:#fff;
+    text-decoration: none;
+    font-size:16px;
+    padding:8px;
+    display: block;
+    font-weight:normal;
+}
+
+ul.tabs li a.active{
+    background: rgba(255,255,255,0.5);
+}
+ul.tabs li a:hover{
+    background: rgba(255,255,255,0.5);
 }

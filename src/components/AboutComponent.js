@@ -74,8 +74,11 @@ class AboutComponent extends React.Component {
     $('.searchFeatures').after().click(() => {
       this.setState({"displaySearch":false});
     });
+  
+    var isAnimate = false;
 
-    $(window).on('mousewheel', function(){     
+    $(window).on('scroll', function() {
+      if (isAnimate == false) {
        if ((window.scrollY <= $("#history").offset().top - 150)){
         $('.navPanel ul li a').removeClass("active");
         $(".navPanel ul").find("li").eq(0).find("a").addClass("active");
@@ -108,19 +111,15 @@ class AboutComponent extends React.Component {
         $('.navPanel ul li a').removeClass("active");
         $(".navPanel ul").find("li").eq(7).find("a").addClass("active");
        }
-
+      }
        if (window.scrollY > 200) {
          $("header").addClass("headerSticky");
          $("#headStrip").addClass("headStripSticky");
-         $(".links").css("visibility","hidden");
-         $(".pageTitle").css("display","block");
          $("#movableLogo").addClass("movableLogo");
        }
        else { 
          $("header").removeClass("headerSticky");
          $("#headStrip").removeClass("headStripSticky");
-         $(".links").css("visibility","visible");
-         $(".pageTitle").css("display","none");
          $("#movableLogo").removeClass("movableLogo");
        }
     });
@@ -133,12 +132,14 @@ class AboutComponent extends React.Component {
     });
     $('.navPanel ul li a').click(function(){     
         var lnk = $(this);
-          $('html, body').animate({
+        isAnimate = true;
+        $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top - 150
-        }, 500, 'swing', function() {
-          $('a').removeClass("active");
-          lnk.addClass("active");
-        });
+          }, 500, 'swing', function() {
+            $('a').removeClass("active");
+            lnk.addClass("active");
+          });
+        setTimeout(function(){ isAnimate = false; }, 1000);
         return false;
     });
   }
@@ -175,13 +176,13 @@ class AboutComponent extends React.Component {
           <div class="item">
             <span 
               href="home" 
-              className={this.state.openMenu === 1 ? "hoverClass" : "hoverClass"}
+              className={this.state.openMenu === 1 ? "hoverClass" : ""}
               onMouseOver={() => this.menuMouseOver(1)}
               onClick={() => this.menuMouseClick(1)}>
               About Us
             </span>
-          {/*<div
-            className={this.state.openMenu === 1 ? "submenu homeMenu" : "submenu"}
+          <div
+            className={this.state.openMenu === 1 ? "submenu homeMenu fixed" : "submenu fixed"}
             onMouseOver={() => this.subMenuMouseOver(1)}
             onMouseOut={this.subMenuMouseOut}
           >
@@ -220,7 +221,7 @@ class AboutComponent extends React.Component {
             <li><a href="/test">Testimonials</a></li>
             <li><a href="/test">Business Integration</a></li>
           </ul>
-          </div>  */}
+          </div>
           </div>
           <div class="item">
             <span
@@ -308,26 +309,29 @@ class AboutComponent extends React.Component {
           <img src={logo} className="elanco-logo" alt="logo" />
           </div>
           <div className={this.state.displaySearch ? "searchBar show" : "searchBar"}><div class="searchButton"><FontAwesomeIcon icon="search" /></div><div class="searchFeatures"><input type="text" placeholder="Search"/></div></div>
-          <div className="pageTitle">ABOUT US</div>
           <div className="icon"><FontAwesomeIcon icon="bars" onClick={this.rollMenu}/></div>
       </header>
       <main class="layout">
         <div className="aboutBanner">
           <div class="detailSection">          
           </div>
-          <div class="chatBtn">          
+          <div class="chatBtn" style={{top:"220px"}}>          
           <img src={chat} alt="Chat with us"/>
             <p>Chat With Us</p>
           </div>
         </div>
-        <div id="headStrip" />
+        <div id="headStrip" >
+           <div style={{width:"90%", margin:"0px auto"}}>
+             <ul class="tabs"><li><a href="#iac" class="active">IAC Overview</a></li><li><a href="#news">News Articles</a></li><li><a href="#events">Events</a></li><li><a href="#engagements">Engagements</a></li></ul>
+           </div>
+        </div>
         <div class="content">
            <div class="navPanel">
            <ul>
               <li><a href="#history" className={this.state.activeLink==1 ? "active": ""}>History</a></li>              
               <li><a href="#whyIAC" className={this.state.activeLink==2 ? "active": ""}>Why IAC</a></li>
               <li><a href="#globalCapabilityCenter" className={this.state.activeLink==3 ? "active": ""}>Global Capability Center</a></li>
-              <li><a href="#leadership" className={this.state.activeLink==4 ? "active": ""}>Leadership</a></li>
+              <li><a href="#leadership" className={this.state.activeLink==4 ? "active": ""}>Leadership Team</a></li>
               <li><a href="#mission" className={this.state.activeLink==5 ? "active": ""}>Mission</a></li>
               <li><a href="#governance" className={this.state.activeLink==6 ? "active": ""}>Governance</a></li>
               <li><a href="#diversity" className={this.state.activeLink==7 ? "active": ""}>Diversity & Inclusion</a></li>              
@@ -459,7 +463,7 @@ to 50% startups and biotech companies</p>
                              Managing Director, EIACI<br/>
                              R&D Regulatory & Admin
                          </div>
-                         <div class="knowMore"><a href="#about">Know more about Mukta...</a></div>
+                         <div class="knowMore"><a href="/leadership">Know more about Mukta...</a></div>
                       </div>   
                       <div style={{clear:"both"}} />                  
                    </div>
@@ -472,7 +476,7 @@ to 50% startups and biotech companies</p>
                          <span class="name">Sajeesh Krishnan</span><br/>
                            Director Business Integration
                          </div>
-                         <div class="knowMore"><a href="#about">Know more about Sajeesh...</a></div>
+                         <div class="knowMore"><a href="/leadership">Know more about Sajeesh...</a></div>
                       </div>        
                    </div>
                    <div class="leaderboard">
@@ -482,7 +486,7 @@ to 50% startups and biotech companies</p>
                            <span class="name">Lakshminarayanan</span><br/>
                            Director,Finance & HR-EIACI
                          </div>
-                         <div class="knowMore"><a href="#about">Know more about Lakshmi...</a></div>
+                         <div class="knowMore"><a href="/leadership">Know more about Lakshmi...</a></div>
                       </div>        
                    </div>
                  </div>
@@ -618,12 +622,12 @@ external alliances</div>
 
                               
                <div class="topic" id="diversity">
-                 <h3>Diversity 7 Inclusion</h3>
+                 <h3>Diversity & Inclusion</h3>
                  <p>          
                  <div style={{display:"table-cell", width:"40%", verticalAlign:"middle"}}> 
                    <img src={diversity} width="100%" />
                  </div>      
-                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", textAlign:"center"}}>
+                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", textAlign:"left"}}>
                  At IAC, we are focused on discovering new ways for innovation and 
 productivity to help our business thrive which requires a culture 
 where our members are willing to bring their diverse backgrounds, 
@@ -632,7 +636,7 @@ on and focus on health and well-being helps ensure that everyone –
 regardless of background – feels included and can contribute at 
 their best.</div>                 
                  </p>
-                 <div className="row">
+                 <div className="row" style={{marginBottom:"0px"}}>
                    <div className="diversity">
                        <p>17+</p>
                        <p><span>State diversity of employees</span></p>
@@ -649,7 +653,7 @@ their best.</div>
                    </div>
                  </div>
                  
-                 <div className="row">
+                 <div className="row"  style={{marginBottom:"0px"}}>
                    <div className="diversity">
                        <p>125+</p>
                        <p><span>Employees</span></p>
@@ -671,7 +675,7 @@ their best.</div>
                <div class="topic" id="csr">
                  <h3>Corporate Social Responsibility</h3>
                  <p>                
-                 <div style={{display:"table-cell", width:"50%", verticalAlign:"middle", paddingRight:"10px", textAlign:"center"}}>
+                 <div style={{display:"table-cell", width:"50%", verticalAlign:"middle", paddingRight:"10px", textAlign:"left"}}>
                  IAC is of the belief that when businesses are conscious of their social 
 and environmental impact on the world, they can benefit society by 
 giving back and helping to find solutions to everyday issues. Our CSR

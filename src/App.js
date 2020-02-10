@@ -11,6 +11,7 @@ import './App.css';
 import HomeComponent from './components/HomeComponent';
 import AboutComponent from './components/AboutComponent';
 import LeadershipComponent from './components/LeadershipComponent';
+import HomeVideoComponent from './components/HomeVideoComponent';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route> 
           <Route exact path="/">
             <HomeComponent />
+          </Route> 
+          <Route exact path="/video">
+            <HomeVideoComponent />
           </Route>          
         </Switch>
       </div>
