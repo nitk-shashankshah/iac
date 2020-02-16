@@ -16,16 +16,16 @@ import globalmarketing from '../assets/icons/globalMarketing.svg';
 import it from '../assets/icons/it.svg';
 import manufacturing from '../assets/icons/manufacturing.svg';
 import rnd from '../assets/icons/rnd.svg';
-import iac from '../assets/images/pic1.svg';
+import iac from '../assets/images/pic1.png';
 import india from '../assets/images/india.svg';
 
-import mission from '../assets/images/mission.svg';
-import csrimage from '../assets/images/csr.svg';
+import mission from '../assets/images/mission.png';
+import csrimage from '../assets/images/csr.png';
 
 import pic1 from '../assets/images/Mukta.jpg';
 import pic2 from '../assets/images/Sajeesh.jpg';
 import pic3 from '../assets/images/LKN.jpg';
-import diversity from '../assets/images/diversity.svg';
+import diversity from '../assets/images/diversity.png';
 
 import './css/home.css';
 import './css/about.css';
@@ -33,9 +33,9 @@ import './css/about.css';
 import $ from 'jquery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faKey, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faKey, faSearch, faArrowUp, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBars, faKey, faSearch);
+library.add(faBars, faKey, faSearch, faArrowUp, faWindowClose);
 
 class AboutComponent extends React.Component {
   constructor(props) {
@@ -45,9 +45,12 @@ class AboutComponent extends React.Component {
       openMenu: 0,
       displaySearch: false,
       activeLink:1,
+      showInformation: false,
       row:-1,
       col:0,
-      info:[["Elanco", "needs", "sdsd"], ["xds","ds","sdds sdsd"], ["zxx", "ffdfd", "pop"]] 
+      info:[["Elanco", "needs", "sdsd"], ["xds","ds","sdds sdsd"], ["zxx", "ffdfd", "pop"]],
+      images: [pic1, pic2, pic3],
+      names: ["Mukta Arora", "Sajeesh Krishnan", "Lakshminarayan"] 
     };
     this.rollMenu = this.rollMenu.bind(this);
     this.menuMouseOver = this.menuMouseOver.bind(this);
@@ -55,29 +58,54 @@ class AboutComponent extends React.Component {
     this.menuMouseOut = this.menuMouseOut.bind(this);
     this.showSearchbox = this.showSearchbox.bind(this);
     this.learnMore = this.learnMore.bind(this);
-    this.closeInfo = this.closeInfo.bind(this);
+    this.scrollFunction  = this.scrollFunction.bind(this);
+    this.showInfo = this.showInfo.bind(this);
+    this.topFunction  = this.topFunction.bind(this);
+    this.closeFunction = this.closeFunction.bind(this);
   }
   menuMouseOut(){
 
-  }
+  }  
 
-  closeInfo() {
-    this.setState({row:-1});
+  closeFunction() {
+    this.setState({showInformation: false});
   }
-
+  showInfo(){
+    this.setState({showInformation: true});
+  }
   learnMore(x,y) {
     this.setState({row:x});
     this.setState({col:y});    
   }
 
+  scrollFunction() {
+    var mybutton = document.getElementById("return-to-top");
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.opacity = "0.6";
+    } else {
+      mybutton.style.opacity = "0";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+
   componentDidMount(){
     $('.searchFeatures').after().click(() => {
       this.setState({"displaySearch":false});
     });
-  
+
     var isAnimate = false;
 
+    var that = this;
+
     $(window).on('scroll', function() {
+      that.scrollFunction();
       if (isAnimate == false) {
        if ((window.scrollY <= $("#history").offset().top - 150)){
         $('.navPanel ul li a').removeClass("active");
@@ -112,16 +140,6 @@ class AboutComponent extends React.Component {
         $(".navPanel ul").find("li").eq(7).find("a").addClass("active");
        }
       }
-       if (window.scrollY > 200) {
-         $("header").addClass("headerSticky");
-         $("#headStrip").addClass("headStripSticky");
-         $("#movableLogo").addClass("movableLogo");
-       }
-       else { 
-         $("header").removeClass("headerSticky");
-         $("#headStrip").removeClass("headStripSticky");
-         $("#movableLogo").removeClass("movableLogo");
-       }
     });
 
     $('.navPanel ul li a').mouseover(function(){
@@ -168,9 +186,11 @@ class AboutComponent extends React.Component {
 
   render() {
   return (
+    
     <div>
-      <header className="header">
-          <img className="App-logo" src={iaclogo} alt="logo" id="movableLogo" />
+      <div className="screen" style={this.state.showInformation ? {display:"block"}:{display:"none"}}></div>
+      <header className="header headerSticky">
+          <div className="App-logo"><a href="/home"><img src={iaclogo} alt="logo" id="movableLogo" /></a></div>
           <div className="links">
           <div className={this.state.isResponsive ? "responsive menu" : "menu"} style={this.state.displaySearch ? {"visibility":"hidden"} : {}}>
           <div class="item">
@@ -311,18 +331,38 @@ class AboutComponent extends React.Component {
           <div className={this.state.displaySearch ? "searchBar show" : "searchBar"}><div class="searchButton"><FontAwesomeIcon icon="search" /></div><div class="searchFeatures"><input type="text" placeholder="Search"/></div></div>
           <div className="icon"><FontAwesomeIcon icon="bars" onClick={this.rollMenu}/></div>
       </header>
-      <main class="layout">
-        <div className="aboutBanner">
-          <div class="detailSection">          
-          </div>
-          <div class="chatBtn" style={{top:"220px"}}>          
+     <main class="layout">
+        <div className="aboutBanner">          
+        </div>
+        <div class="chatBtn" style={{top:"220px"}}>          
           <img src={chat} alt="Chat with us"/>
             <p>Chat With Us</p>
-          </div>
         </div>
         <div id="headStrip" >
            <div style={{width:"90%", margin:"0px auto"}}>
              <ul class="tabs"><li><a href="#iac" class="active">IAC Overview</a></li><li><a href="#news">News Articles</a></li><li><a href="#events">Events</a></li><li><a href="#engagements">Engagements</a></li></ul>
+           </div>
+        </div>
+        <div className="information" style={this.state.showInformation ? {display:"block"}:{display:"none"}}>
+            
+           <div onClick={this.closeFunction} href="javascript:" id="closeBtn"><FontAwesomeIcon icon="window-close" /></div>
+
+           <div class="centerAlign">
+                 <p>
+                   <span className="leaderName">{this.state.names[0]}</span>
+                 </p>
+                 <p>
+                   <span className="designation">
+                     Managing Director, EIACI<br/>
+                     R&D Regulatory & Admin
+                   </span>
+                 </p>
+                 <img src={this.state.images[0]} />
+                 <p className="bioHeading">{this.state.names[0]}'s biography</p>
+                 <p className="biography">
+                 Elanco Innovation & Alliance Centre India is registered in India on 14th March, 2019, it has been formally inaugurated by Aaron Schacht,
+Executive VP on 1st October, 2019. We believe in leading through Innovation Productivity and Portfolio (IPP) strategy.
+                 </p>
            </div>
         </div>
         <div class="content">
@@ -463,7 +503,7 @@ to 50% startups and biotech companies</p>
                              Managing Director, EIACI<br/>
                              R&D Regulatory & Admin
                          </div>
-                         <div class="knowMore"><a href="/leadership">Know more about Mukta...</a></div>
+                         <div class="knowMore"><span onClick={()=>this.showInfo()}>Know more about Mukta...</span></div>
                       </div>   
                       <div style={{clear:"both"}} />                  
                    </div>
@@ -476,7 +516,7 @@ to 50% startups and biotech companies</p>
                          <span class="name">Sajeesh Krishnan</span><br/>
                            Director Business Integration
                          </div>
-                         <div class="knowMore"><a href="/leadership">Know more about Sajeesh...</a></div>
+                         <div class="knowMore"><span onClick={()=>this.showInfo()}>Know more about Sajeesh...</span></div>
                       </div>        
                    </div>
                    <div class="leaderboard">
@@ -486,7 +526,7 @@ to 50% startups and biotech companies</p>
                            <span class="name">Lakshminarayanan</span><br/>
                            Director,Finance & HR-EIACI
                          </div>
-                         <div class="knowMore"><a href="/leadership">Know more about Lakshmi...</a></div>
+                         <div class="knowMore"><span onClick={()=>this.showInfo()}>Know more about Lakshmi...</span></div>
                       </div>        
                    </div>
                  </div>
@@ -500,7 +540,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(0,0)}>Learn More</span>
+                     <span  onClick={()=>this.showInfo()}>Learn More</span>
                      </div>
                    </div>
                    <div class="funcleaderboard">
@@ -509,7 +549,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(0,1)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div>
                    </div>
                    <div class="funcleaderboard">
@@ -518,15 +558,9 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(0,2)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div>
                    </div>                
-                  </div>
-                  <div class="row">
-                    <div className={this.state.row === 0 ? "info show" : "info"}>
-                      <div class="close"><input type="button" value="X" onClick={()=>this.closeInfo()}/></div>
-                      <p>{this.state.info[0][this.state.col]}</p>
-                    </div>
                   </div>
                   <div class="row">
                    <div class="funcleaderboard">
@@ -535,7 +569,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(1,0)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div> 
                    </div>
                    
@@ -545,7 +579,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(1,1)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div> 
                    </div>
 
@@ -555,15 +589,9 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(1,2)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div>     
                    </div>
-                  </div>
-                  <div class="row">
-                    <div className={this.state.row === 1 ? "info show" : "info"}>
-                      <div class="close"><input type="button" value="X" onClick={()=>this.closeInfo()}/></div>
-                    <p>{this.state.info[1][this.state.col]}</p>
-                    </div>
                   </div>
 
                   <div class="row">
@@ -573,7 +601,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(2,0)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div> 
                    </div>
                    <div class="funcleaderboard">
@@ -582,7 +610,7 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                      <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(2,1)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div>
                    </div>
                    <div class="funcleaderboard">
@@ -591,16 +619,10 @@ to 50% startups and biotech companies</p>
                      <div class="desc">
                            <span class="name">Name Surname</span><br/>
                            Director,Finance & HR-EIACI<br/>
-                     <span onClick={()=>this.learnMore(2,2)}>Learn More</span>
+                     <span onClick={()=>this.showInfo()}>Learn More</span>
                      </div>
                    </div>
                  </div>
-                 <div class="row">
-                    <div className={this.state.row === 2 ? "info show" : "info"}>
-                      <div class="close"><input type="button" value="X" onClick={()=>this.closeInfo()}/></div>
-                    <p>{this.state.info[1][this.state.col]}</p>
-                    </div>
-                  </div>
                  <div style={{clear:"both"}}></div>
                </div>
 
@@ -608,7 +630,7 @@ to 50% startups and biotech companies</p>
                <div class="topic" id="mission">
                  <h3>Mission</h3>
                  <p>                
-                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", color:"#303f6a", fontWeight:"normal", lineHeight:"36px", fontSize:"28px", textAlign:"center"}}>
+                 <div style={{display:"table-cell", width:"50%",verticalAlign:"middle", paddingRight:"10px", color:"#303f6a", fontWeight:"normal", lineHeight:"36px", fontSize:"28px", textAlign:"left"}}>
                  Our mission is to enable Elanco’s IPP 
 strategy by building global capabilities, 
 fostering innovations and forging 
@@ -697,10 +719,12 @@ well-being of animals, people and the planet.</div>
                <div class="topic" id="successStories"></div>
                
                <div class="topic" id="faqs"></div>
-           </div>
+               
+               <div onClick={this.topFunction}  href="javascript:" id="return-to-top"  title="Go to top"><FontAwesomeIcon icon="arrow-up" /></div>
+              </div>
         </div>
       </main>
-      </div>
+    </div>
   );
   }
 }

@@ -89,11 +89,11 @@
   }
   
   ::-moz-selection { /* Code for Firefox */
-    color:#f0ab00;
+    color:#0070a5;
   }
 
   ::selection {
-    color: #e91e63;
+    color: #0070a5;
   }
   .links {
     display: flex;
@@ -367,7 +367,7 @@
     left:50%;
     transform: translateX(-50%);
     width:1235px;
-    position: absolute;
+    position: fixed;
   }
 
   .capabilityMenu ul:first-child{
